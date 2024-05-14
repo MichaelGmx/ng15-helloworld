@@ -1,0 +1,83 @@
+<div class="da-content-banner">
+  <d-breadcrumb>
+    <d-breadcrumb-item>
+      <a routerLink="/">首页</a>
+    </d-breadcrumb-item>
+    <d-breadcrumb-item>Angular</d-breadcrumb-item>
+    <d-breadcrumb-item>@angular/common</d-breadcrumb-item>
+    <d-breadcrumb-item>*ngIf</d-breadcrumb-item>
+  </d-breadcrumb>
+  <div class="da-content-banner-title">
+    *ngIf
+  </div>
+  <div class="summary-markdown">
+    <markdown ngPreserveWhitespaces>
+      ## *ngIf
+  
+      条件结构型指令
+    </markdown>
+  </div>
+</div>
+<div class="da-content-wrapper">
+  <da-layout-row [daGutter]="[24, 24]">
+    <da-col-item [daSpan]="24" [daXs]="24">
+      <div class="da-content-card">
+        
+        <d-button (click)="condition = !condition">toggle</d-button>
+
+        <!-- 常用方式 -->
+        <div *ngIf="condition">
+          Content to render when condition is ture
+        </div>
+        <div *ngIf="!condition">
+          Content to render when condition is false
+        </div>
+
+        <!-- 具有扩展语法的方式 -->
+        <ng-template [ngIf]="condition">
+          <div>Content to render when condition is ture</div>
+        </ng-template>
+        <ng-template [ngIf]="!condition">
+          <div>Content to render when condition is false</div>
+        </ng-template>
+
+        <!-- 带 else 的方式 -->
+        <div *ngIf="condition; else elseBlock">
+          Content to render when condition is ture
+        </div>
+        <ng-template #elseBlock>
+          <div>Content to render when condition is false</div>
+        </ng-template>
+
+        <!-- 带 then else 的方式 -->
+        <ng-container *ngIf="condition; then thenBlock else elseBlock"></ng-container>
+        <ng-template #thenBlock>
+          <div>Content to render when condition is true</div>
+        </ng-template>
+        <ng-template #elseBlock>
+          <div>Content to render when condition is false</div>
+        </ng-template>
+
+
+
+        <hr />
+
+
+
+        <d-button (click)="nextUser()">Next User</d-button>
+
+        <br />
+
+        <div *ngIf="(userObservable | async) as user; else loading">
+          Hello {{ user.first }}, {{ user.last }}
+        </div>
+        <ng-template #loading let-user>
+          <div>
+            Waiting...(user is {{user|json}})
+          </div>
+        </ng-template>
+        
+      </div>
+    </da-col-item>
+  </da-layout-row>
+</div>

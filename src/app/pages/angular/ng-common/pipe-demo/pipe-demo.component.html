@@ -1,0 +1,86 @@
+<div class="da-content-banner">
+  <d-breadcrumb>
+    <d-breadcrumb-item>
+      <a routerLink="/">首页</a>
+    </d-breadcrumb-item>
+    <d-breadcrumb-item>Angular</d-breadcrumb-item>
+    <d-breadcrumb-item>@angular/common</d-breadcrumb-item>
+    <d-breadcrumb-item>Pipe 内置管道</d-breadcrumb-item>
+  </d-breadcrumb>
+  <div class="da-content-banner-title">
+    Pipe 内置管道
+  </div>
+  <div class="summary-markdown">
+    <markdown ngPreserveWhitespaces>
+      ## 内置管道
+  
+      常用：<br>
+      **DatePipe**：根据本地环境中的规则格式化日期值。<br>
+      **UpperCasePipe**：把文本全部转换成大写。<br>
+      **LowerCasePipe** ：把文本全部转换成小写。<br>
+      **CurrencyPipe** ：把数字转换成货币字符串，根据本地环境中的规则进行格式化。<br>
+      **DecimalPipe**：把数字转换成带小数点的字符串，根据本地环境中的规则进行格式化。<br>
+      **PercentPipe** ：把数字转换成百分比字符串，根据本地环境中的规则进行格式化。
+  
+      [官方API](https://v10.angular.cn/guide/pipes)
+    </markdown>
+  </div>
+</div>
+<div class="da-content-wrapper">
+  <da-layout-row [daGutter]="[24, 24]">
+    <da-col-item [daSpan]="24" [daXs]="24">
+      <div class="da-content-card">
+
+        <p>date1（Date.now()值）: {{ date1 }}</p>
+        <p>date1（date管道）: {{ date1 | date }}</p>
+        <p>date1（date管道 格式化）: {{ date1 | date: 'fullDate' }}</p>
+        <p>date1（date管道 自定义格式）: {{ date1 | date: 'EEEE yyyy-MM-dd' }}</p>
+
+        <hr />
+
+        <p>str1: {{ str1 }}</p>
+        <p>str1（lowercase）: {{ str1 | lowercase }}</p>
+        <p>str1（uppercase）: {{ str1 | uppercase }}</p>
+
+        <hr />
+
+        <p>num1: {{ num1 }}</p>
+        <p>num1（DecimalPipe）: {{ num1 | number }}</p>
+        <p>num1（DecimalPipe 保留 2位小数）: {{ num1 | number: '1.1-2' }}</p>
+        <p>num1（DecimalPipe 同时 保留正数位）: {{ num1 | number: '6.1-2' }}</p>
+
+        <p>num1（货币 管道）: {{ num1 | currency }}</p>
+        <p>num1（货币 区域编号）: {{ num1 | currency: 'CNY' }}</p>
+        <p>num1（货币 保留位数）: {{ num1 | currency: 'CNY':'symbol':'6.1-1' }}</p>
+        <p>num1（货币 自定义货币符）: {{ num1 | currency: '￥' }}</p>
+
+        <hr />
+
+        <p>num2: {{ num2 }}</p>
+        <p>num2（PercentPipe）: {{ num2 | percent }}</p>
+        <p>num2（PercentPipe 保留位数）: {{ num2 | percent: '3.1-2' }}</p>
+
+        <hr />
+
+        <p>obj: {{ obj }}</p>
+        <p>obj（json管道）: {{ obj | json }}</p>
+
+        <hr />
+
+        <p>AsyncPipe:</p>
+        <div>
+          <p>点击下面按钮，2秒后显示：{{ asyncObj1 | async }}</p>
+          <button (click)="loadPromise()">loadPromise</button>
+        </div>
+
+        <hr>
+
+        <div>
+          <p>点击下面按钮，2秒后显示：{{ asyncObj2 | async }}</p>
+          <button (click)="loadObservable()">loadObservable</button>
+        </div>
+
+      </div>
+    </da-col-item>
+  </da-layout-row>
+</div>

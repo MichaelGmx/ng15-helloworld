@@ -1,0 +1,42 @@
+<div class="da-content-banner">
+  <d-breadcrumb>
+    <d-breadcrumb-item>
+      <a routerLink="/">首页</a>
+    </d-breadcrumb-item>
+    <d-breadcrumb-item>Angular</d-breadcrumb-item>
+    <d-breadcrumb-item>@angular/common</d-breadcrumb-item>
+    <d-breadcrumb-item>*ngComponentOutlet</d-breadcrumb-item>
+  </d-breadcrumb>
+  <div class="da-content-banner-title">
+    *ngComponentOutlet
+  </div>
+  <div>
+    *ngComponentOutlet 示例
+  </div>
+</div>
+<div class="da-content-wrapper">
+  <da-layout-row [daGutter]="[24, 24]">
+    <da-col-item [daSpan]="24" [daXs]="24">
+      <div class="da-content-card">
+
+        <label for="formA">
+          <input type="radio" id="formA" name="form" value="A" [(ngModel)]="chooseForm">
+          formA
+        </label>
+        <label for="formB">
+          <input type="radio" id="formB" name="form" value="B" [(ngModel)]="chooseForm">
+          formB
+        </label>
+        <label for="formC">
+          <input type="radio" id="formC" name="form" value="C" [(ngModel)]="chooseForm">
+          formC
+        </label>
+
+        <ng-container *ngComponentOutlet="mapping.get(chooseForm)"></ng-container>
+
+      </div>
+    </da-col-item>
+  </da-layout-row>
+</div>
+
+

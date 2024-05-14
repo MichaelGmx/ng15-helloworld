@@ -1,0 +1,7 @@
+<ng-container *ngTemplateOutlet="render || defaultTpl; context: myContext">
+
+</ng-container>
+
+<ng-template #defaultTpl let-defaultKey let-customKey="customVal">
+  <p>这是默认 渲染 - {{ defaultKey }} - {{ customKey }}</p>
+</ng-template>

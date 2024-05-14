@@ -1,0 +1,68 @@
+<div class="da-content-banner">
+  <d-breadcrumb>
+    <d-breadcrumb-item>
+      <a routerLink="/">首页</a>
+    </d-breadcrumb-item>
+    <d-breadcrumb-item>Angular</d-breadcrumb-item>
+    <d-breadcrumb-item>@angular/common</d-breadcrumb-item>
+    <d-breadcrumb-item>*ngTemplateOutlet</d-breadcrumb-item>
+  </d-breadcrumb>
+  <div class="da-content-banner-title">
+    *ngTemplateOutlet
+  </div>
+  <div>
+    *ngTemplateOutlet 示例
+  </div>
+</div>
+<div class="da-content-wrapper">
+  <da-layout-row [daGutter]="[24, 24]">
+    <da-col-item [daSpan]="24" [daXs]="24">
+      <div class="da-content-card">
+
+        <ng-container *ngTemplateOutlet="greet"></ng-container>
+        <!-- <ng-template [ngTemplateOutlet]="greet"></ng-template> -->
+        <ng-template #greet>
+          <p>Hello</p>
+        </ng-template>
+
+        <ng-container *ngTemplateOutlet="eng; context: myContext"></ng-container>
+        <!-- <ng-template [ngTemplateOutlet]="eng" [ngTemplateOutletContext]="myContext"></ng-template> -->
+        <ng-template #eng let-name>
+          <p>Hello {{ name }}</p>
+        </ng-template>
+
+        <ng-container *ngTemplateOutlet="svk; context: myContext"></ng-container>
+        <!-- <ng-template [ngTemplateOutlet]="svk" [ngTemplateOutletContext]="myContext"></ng-template> -->
+        <ng-template #svk let-person="param2">
+          <p>Ahoj {{ person }} </p>
+        </ng-template>
+
+        <ng-container *ngTemplateOutlet="custom; context: { $implicit: 'World', anotherKey: 'Svet' }"></ng-container>
+        <!-- <ng-template [ngTemplateOutlet]="custom" [ngTemplateOutletContext]="{ $implicit: 'World', anotherKey: 'Svet' }"></ng-template> -->
+        <ng-template #custom let-param1 let-param2="anotherKey">
+          <p>Custom: {{ param1 }} {{ param2 }}</p>
+        </ng-template>
+
+        <ng-container *ngTemplateOutlet="custom2; context: myContext2"></ng-container>
+        <!-- <ng-template [ngTemplateOutlet]="custom2" [ngTemplateOutletContext]="myContext2"></ng-template> -->
+        <ng-template #custom2 let-person="person">
+          <p>Custom2: {{ person.name }} </p>
+        </ng-template>
+
+
+
+        <hr>
+
+
+
+        <app-ng-template-outlet-child></app-ng-template-outlet-child>
+
+        <app-ng-template-outlet-child [render]="customRenderTpl"></app-ng-template-outlet-child>
+        <ng-template #customRenderTpl let-defaultKey let-customKey="customVal">
+          <p>这是自定义 渲染 - {{ defaultKey }} - {{ customKey }}</p>
+        </ng-template>
+
+      </div>
+    </da-col-item>
+  </da-layout-row>
+</div>

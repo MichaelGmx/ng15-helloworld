@@ -1,0 +1,53 @@
+<div class="da-content-banner">
+  <d-breadcrumb>
+    <d-breadcrumb-item>
+      <a routerLink="/">首页</a>
+    </d-breadcrumb-item>
+    <d-breadcrumb-item>Angular</d-breadcrumb-item>
+    <d-breadcrumb-item>@angular/common</d-breadcrumb-item>
+    <d-breadcrumb-item>*ngFor</d-breadcrumb-item>
+  </d-breadcrumb>
+  <div class="da-content-banner-title">
+    *ngFor
+  </div>
+  <div class="summary-markdown">
+    <markdown ngPreserveWhitespaces>
+      ## *ngFor
+  
+      局部变量：<br>
+      **index: number**: 索引<br>
+      **count: number**: 数组length<br>
+      **odd &nbsp; : boolean**: 索引是否为奇数<br>
+      **even&nbsp; : boolean**: 索引是否为偶数<br>
+      **first&nbsp; : boolean**: 索引是否为第一个<br>
+      **last &nbsp; : boolean**: 索引是否为最后一个<br>
+  
+      **trackBy**: 接受 index、item参数的函数，可以根据返回值跟踪变化<br>
+      确定唯一后，如果数组发生变化，可以仅更新渲染变化的item
+    </markdown>
+  </div>
+</div>
+<div class="da-content-wrapper">
+  <da-layout-row [daGutter]="[24, 24]">
+    <da-col-item [daSpan]="24" [daXs]="24">
+      <div class="da-content-card">
+
+        <ul>
+          <li *ngFor="let hero of heros; index as i; count as len; even as ev; odd as od; first as f; last as l; trackBy: trackByHero"
+            [class.even]="ev"
+            [class.odd]="od">
+            <span>index: {{ i }}</span> -
+            name: {{ hero.name }}
+            <b *ngIf="f"> - First</b>
+            <b *ngIf="l"> - Last - length: {{ len }}</b>
+          </li>
+        </ul>
+        
+        <input type="text" [(ngModel)]="newName">
+        <d-button (click)="add()">add</d-button>
+        <d-button (click)="reset()" bsStyle="danger">reset</d-button>
+
+      </div>
+    </da-col-item>
+  </da-layout-row>
+</div>

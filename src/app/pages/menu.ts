@@ -52,6 +52,32 @@ export default function (values: any) {
           ],
         },
         {
+          title: '@angular/common',
+          link: '/angular/ng-common',
+          children: [
+            {
+              title: '*ngIf',
+              link: '/angular/ng-common/ng-if',
+            },
+            {
+              title: '*ngfor',
+              link: '/angular/ng-common/ng-for',
+            },
+            {
+              title: 'Pipe 内置管道',
+              link: '/angular/ng-common/pipe',
+            },
+            {
+              title: '*ngTemplateOutlet',
+              link: '/angular/ng-common/ng-template-outlet',
+            },
+            {
+              title: '*ngComponentOutlet',
+              link: '/angular/ng-common/ng-component-outlet',
+            },
+          ],
+        },
+        {
           title: '@angular/core',
           link: '/angular/ng-core',
           children: [
