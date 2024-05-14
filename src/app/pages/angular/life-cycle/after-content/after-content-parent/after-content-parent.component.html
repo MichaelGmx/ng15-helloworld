@@ -1,0 +1,55 @@
+<div class="da-content-banner">
+  <d-breadcrumb>
+    <d-breadcrumb-item>
+      <a routerLink="/">首页</a>
+    </d-breadcrumb-item>
+    <d-breadcrumb-item>Angular</d-breadcrumb-item>
+    <d-breadcrumb-item>生命周期</d-breadcrumb-item>
+    <d-breadcrumb-item>AfterContent</d-breadcrumb-item>
+  </d-breadcrumb>
+  <div class="da-content-banner-title">
+    AfterContent
+  </div>
+  <div class="summary-markdown">
+    <markdown ngPreserveWhitespaces>
+      ## AfterContentInit、AfterContentChecked
+  
+      > 1.construction中是获取不到 投影内容，<br>
+         原因是 构造函数是在 **渲染前** 执行的<br>
+  
+      > 2.AfterContentInit会在投影内容渲染完毕后调用一次<br>
+         此刻可以访问 投影内容<br>
+  
+      > 3.子组件input获取焦点后blur失去焦点也会触发变更检测<br>
+         在 AfterContentChecked 的Log中可以看到(no change)的记录
+  
+      > 4.子组件内容变化，会频繁触发 AfterContentChecked() 方法的执行<br>
+         所以尽可能少用或适量使用，以避免性能问题
+  
+      > 5.与 AfterView的内容不同的是，AfterContent是在 **视图合成前** 执行的，<br>
+         AfterContent与AfterView之间，可以修改宿主视图
+         所以doSomething中，可以不需要延迟更新视图
+    </markdown>
+  </div>
+</div>
+<div class="da-content-wrapper">
+  <da-layout-row [daGutter]="[24, 24]">
+    <da-col-item [daSpan]="24" [daXs]="24">
+      <div class="da-content-card">
+
+        <div *ngIf="show">
+          <app-after-content>
+            <app-child-content></app-child-content>
+          </app-after-content>
+        </div>
+        
+        <div class="info">
+          <h3>AfterContent Logs:</h3>
+          <button (click)="reset()">Reset Log</button>
+          <div *ngFor="let log of logger.logs" class="log">{{ log }}</div>
+        </div>
+
+      </div>
+    </da-col-item>
+  </da-layout-row>
+</div>

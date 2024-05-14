@@ -17,7 +17,42 @@ export default function (values: any) {
       link: '/angular',
       children: [
         {
-          title: '@ng-core',
+          title: '生命周期',
+          link: '/angular/life-cycle',
+          children: [
+            {
+              title: 'Peek-A-Boo',
+              link: '/angular/life-cycle/peek-a-boo',
+            },
+            {
+              title: 'Spy Directive',
+              link: '/angular/life-cycle/spy',
+            },
+            {
+              title: 'OnChanges',
+              link: '/angular/life-cycle/on-changes',
+            },
+            {
+              title: 'DoCheck',
+              link: '/angular/life-cycle/do-check',
+            },
+
+            {
+              title: 'AafterView',
+              link: '/angular/life-cycle/after-view',
+            },
+            {
+              title: 'AfterContent',
+              link: '/angular/life-cycle/after-content',
+            },
+            {
+              title: 'Counter Spy',
+              link: '/angular/life-cycle/counter-spy',
+            },
+          ],
+        },
+        {
+          title: '@angular/core',
           link: '/angular/ng-core',
           children: [
             {
@@ -27,7 +62,7 @@ export default function (values: any) {
           ],
         },
         {
-          title: '@ng-animations',
+          title: '@angular/animations',
           link: '/angular/ng-animations',
           children: [
             {

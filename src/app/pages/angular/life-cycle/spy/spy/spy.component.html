@@ -1,0 +1,47 @@
+<div class="da-content-banner">
+  <d-breadcrumb>
+    <d-breadcrumb-item>
+      <a routerLink="/">首页</a>
+    </d-breadcrumb-item>
+    <d-breadcrumb-item>Angular</d-breadcrumb-item>
+    <d-breadcrumb-item>生命周期</d-breadcrumb-item>
+    <d-breadcrumb-item>Spy Directive</d-breadcrumb-item>
+  </d-breadcrumb>
+  <div class="da-content-banner-title">
+    Spy Directive
+  </div>
+  <div class="summary-markdown">
+    <markdown ngPreserveWhitespaces>
+      ## 使用 指令 监视组件变化
+  
+      可以使用 **directive** 获取到组件的生命周期变化
+    </markdown>
+  </div>
+</div>
+<div class="da-content-wrapper">
+  <da-layout-row [daGutter]="[24, 24]">
+    <da-col-item [daSpan]="24" [daXs]="24">
+      <div class="da-content-card">
+
+        <label class="title">New Hero:</label>
+        <input type="text" [(ngModel)]="newName" (keyup.enter)="addHero()" />
+
+        <button (click)="addHero()">addHero</button>
+        <button (click)="clear()">clear</button>
+
+        <div class="info">
+          Heroes:
+          <p *ngFor="let hero of heroes" appSpy>
+            {{ hero }}
+          </p>
+        </div>
+
+        <h3>Log:</h3>
+        <div *ngFor="let log of logger.logs" class="log">
+          {{log}}
+        </div>
+
+      </div>
+    </da-col-item>
+  </da-layout-row>
+</div>

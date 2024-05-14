@@ -1,0 +1,42 @@
+<div class="da-content-banner">
+  <d-breadcrumb>
+    <d-breadcrumb-item>
+      <a routerLink="/">首页</a>
+    </d-breadcrumb-item>
+    <d-breadcrumb-item>Angular</d-breadcrumb-item>
+    <d-breadcrumb-item>生命周期</d-breadcrumb-item>
+    <d-breadcrumb-item>OnChanges</d-breadcrumb-item>
+  </d-breadcrumb>
+  <div class="da-content-banner-title">
+    OnChanges
+  </div>
+  <div class="summary-markdown">
+    <markdown ngPreserveWhitespaces>
+      ## onChanges()
+  
+      `onChanges()`方法 不会捕捉对 hero.name的更改
+  
+      因为app-on-changes组件中 hero输入属性是 引用类型 hero对象<br>
+      更改hero.name并不会改变hero的引用
+    </markdown>
+  </div>
+</div>
+<div class="da-content-wrapper">
+  <da-layout-row [daGutter]="[24, 24]">
+    <da-col-item [daSpan]="24" [daXs]="24">
+      <div class="da-content-card">
+
+        <label for="power-input" class="title">Power:</label>
+        <input type="text" id="power-input" [(ngModel)]="power" spellcheck="false" autocomplete="off">
+
+        <label for="hero-name" class="title">Hero Name:</label>
+        <input type="text" id="hero-name" [(ngModel)]="hero.name" spellcheck="false" autocomplete="off">
+
+        <button (click)="reset()">Reset Log</button>
+
+        <app-on-changes [hero]="hero" [power]="power"></app-on-changes>
+
+      </div>
+    </da-col-item>
+  </da-layout-row>
+</div>

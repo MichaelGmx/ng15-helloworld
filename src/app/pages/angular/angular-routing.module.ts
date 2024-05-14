@@ -8,11 +8,12 @@ const routes: Routes = [
     path: '',
     component: AngularComponent,
     children: [
+      { path: 'life-cycle', loadChildren: () => import('./life-cycle/life-cycle.module').then((m) => m.LifeCycleModule) },
       { path: 'ng-core', loadChildren: () => import('./ng-core/ng-core.module').then((m) => m.NgCoreModule) },
       { path: 'ng-animations', loadChildren: () => import('./ng-animations/ng-animations.module').then((m) => m.NgAnimationsModule) },
 
-      { path: '', redirectTo: 'ng-core', pathMatch: 'full' },
-      { path: '**', redirectTo: 'ng-core' },
+      { path: '', redirectTo: 'life-cycle', pathMatch: 'full' },
+      { path: '**', redirectTo: 'life-cycle' },
     ],
   },
 ];

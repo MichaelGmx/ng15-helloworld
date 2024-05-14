@@ -1,0 +1,47 @@
+<div class="da-content-banner">
+  <d-breadcrumb>
+    <d-breadcrumb-item>
+      <a routerLink="/">首页</a>
+    </d-breadcrumb-item>
+    <d-breadcrumb-item>Angular</d-breadcrumb-item>
+    <d-breadcrumb-item>生命周期</d-breadcrumb-item>
+    <d-breadcrumb-item>Peek-A-Boo</d-breadcrumb-item>
+  </d-breadcrumb>
+  <div class="da-content-banner-title">
+    Peek-A-Boo
+  </div>
+  <div class="summary-markdown">
+    <markdown ngPreserveWhitespaces>
+      ## 生命周期 顺序
+  
+      1. construction中是获取不到输入属性的，<br>
+         原因是 构造函数是在 **渲染前** 执行的<br>
+         需要 **初始化操作** 输入属性的话，一般在 `onInit` 中
+      2. 每次变更检测，都会被 `OnChanges` 获取，<br>
+         且在其前后 按顺序执行到 `DoCheck`、`AfterContentChecked`、`AfterViewChecked`
+    </markdown>
+  </div>
+</div>
+<div class="da-content-wrapper">
+  <da-layout-row [daGutter]="[24, 24]">
+    <da-col-item [daSpan]="24" [daXs]="24">
+      <div class="da-content-card">
+
+        <button (click)="toggleChild()">
+          {{ hasChild ? 'Destory' : 'Create' }} PeekABooComponent
+        </button>
+        <button (click)="updateHero()" [hidden]="!hasChild">
+          Update Hero
+        </button>
+        
+        <div class="info">
+          <app-peek-a-boo *ngIf="hasChild" [name]="heroName"></app-peek-a-boo>
+        
+          <h3>Log:</h3>
+          <div *ngFor="let msg of hookLog" class="log">{{msg}}</div>
+        </div>
+
+      </div>
+    </da-col-item>
+  </da-layout-row>
+</div>

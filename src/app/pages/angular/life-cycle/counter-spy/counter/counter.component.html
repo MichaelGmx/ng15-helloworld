@@ -1,0 +1,6 @@
+<p>Counter = {{ counter }}</p>
+
+<div class="info">
+  <h3>Counter Change Log:</h3>
+  <div *ngFor="let log of changeLog" appCounterSpy class="log">{{ log }}</div>
+</div>

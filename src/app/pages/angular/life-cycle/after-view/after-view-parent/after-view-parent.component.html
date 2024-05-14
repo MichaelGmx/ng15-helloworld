@@ -1,0 +1,48 @@
+<div class="da-content-banner">
+  <d-breadcrumb>
+    <d-breadcrumb-item>
+      <a routerLink="/">首页</a>
+    </d-breadcrumb-item>
+    <d-breadcrumb-item>Angular</d-breadcrumb-item>
+    <d-breadcrumb-item>生命周期</d-breadcrumb-item>
+    <d-breadcrumb-item>AfterView</d-breadcrumb-item>
+  </d-breadcrumb>
+  <div class="da-content-banner-title">
+    AfterView
+  </div>
+  <div class="summary-markdown">
+    <markdown ngPreserveWhitespaces>
+      ## AfterViewInit、AfterViewChecked
+  
+      > 1.construction中是获取不到 子组件的内容，<br>
+         原因是 构造函数是在 **渲染前** 执行的<br>
+      <br>
+      > 2.AfterViewInit会在子组件渲染完毕后调用一次<br>
+         此刻可以访问 子组件的内容<br>
+      <br>
+      > 3.子组件input获取焦点后blur失去焦点也会触发变更检测<br>
+         在 AfterViewChecked 的Log中可以看到(no change)的记录<br>
+      <br>
+      > 4.子组件内容变化，会频繁触发 AfterViewChecked() 方法的执行<br>
+         所以尽可能少用或适量使用，以避免性能问题
+    </markdown>
+  </div>
+</div>
+<div class="da-content-wrapper">
+  <da-layout-row [daGutter]="[24, 24]">
+    <da-col-item [daSpan]="24" [daXs]="24">
+      <div class="da-content-card">
+
+        <app-after-view *ngIf="show"></app-after-view>
+
+        <div class="info">
+          <h3>AfterView Log:</h3>
+
+          <button (click)="reset()">Reset Log</button>
+          <div *ngFor="let log of logger.logs" class="log">{{ log }}</div>
+        </div>
+
+      </div>
+    </da-col-item>
+  </da-layout-row>
+</div>

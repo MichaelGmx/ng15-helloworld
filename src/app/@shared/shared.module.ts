@@ -37,6 +37,9 @@ import { HeaderLogoComponent } from './components/header/header-logo/header-logo
 import { SideMenuComponent } from './components/side-menu/side-menu.component';
 import { RegisterComponent } from './components/register/register.component';
 
+// 第三方插件
+import { MarkdownModule } from 'ngx-markdown';
+
 const DEVUI_MODULES = [
   LayoutModule,
   AccordionModule,
@@ -81,7 +84,10 @@ const COMPONENTS = [
     TooltipModule,
     I18nModule,
     DaGridModule,
-    ...DEVUI_MODULES
+    ...DEVUI_MODULES,
+
+    // 第三方插件
+    MarkdownModule.forRoot(),              // 允许 使用 Markdown 插件
   ],
   exports: [
     CommonModule,
@@ -93,7 +99,10 @@ const COMPONENTS = [
     DaGridModule,
     SideMenuComponent,
     ...DEVUI_MODULES,
-    ...COMPONENTS
+    ...COMPONENTS,
+
+    // 第三方插件
+    MarkdownModule,
   ]
 })
 export class SharedModule {
