@@ -1,0 +1,31 @@
+<div class="da-content-banner">
+  <d-breadcrumb>
+    <d-breadcrumb-item>
+      <a routerLink="/">首页</a>
+    </d-breadcrumb-item>
+    <d-breadcrumb-item>Angular</d-breadcrumb-item>
+    <d-breadcrumb-item>@ng-animations</d-breadcrumb-item>
+    <d-breadcrumb-item>简单示例</d-breadcrumb-item>
+  </d-breadcrumb>
+  <div class="da-content-banner-title">
+    简单示例
+  </div>
+  <div>
+    简单示例
+  </div>
+</div>
+<div class="da-content-wrapper">
+  <da-layout-row [daGutter]="[24, 24]">
+    <da-col-item [daSpan]="24" [daXs]="24">
+      <div class="da-content-card">
+        
+        <d-button (click)="toggle()">Toggle Open/Close</d-button>
+        
+        <div [@openClose]="isOpen ? 'open' : 'closed'" class="open-close-container">
+          <p>The box is now {{ isOpen ? 'Open' : 'Closed' }}!</p>
+        </div>
+
+      </div>
+    </da-col-item>
+  </da-layout-row>
+</div>

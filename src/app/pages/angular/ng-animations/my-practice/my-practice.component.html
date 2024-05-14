@@ -1,0 +1,31 @@
+<div class="da-content-banner">
+  <d-breadcrumb>
+    <d-breadcrumb-item>
+      <a routerLink="/">首页</a>
+    </d-breadcrumb-item>
+    <d-breadcrumb-item>Angular</d-breadcrumb-item>
+    <d-breadcrumb-item>@ng-animations</d-breadcrumb-item>
+    <d-breadcrumb-item>练习</d-breadcrumb-item>
+  </d-breadcrumb>
+  <div class="da-content-banner-title">
+    练习
+  </div>
+  <div>
+    练习
+  </div>
+</div>
+<div class="da-content-wrapper">
+  <da-layout-row [daGutter]="[24, 24]">
+    <da-col-item [daSpan]="24" [daXs]="24">
+      <div class="da-content-card">
+
+        <d-button (click)="toggle()">show / hide</d-button>
+
+        <div *ngIf="isShown" @doneAnimate class="animate-block">
+          <img src="./assets/devui-logo.svg">
+        </div>
+
+      </div>
+    </da-col-item>
+  </da-layout-row>
+</div>

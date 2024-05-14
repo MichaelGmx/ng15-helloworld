@@ -5,28 +5,15 @@ import { LoginComponent } from './@shared/components/login/login.component';
 import { RegisterComponent } from './@shared/components/register/register.component';
 
 const routes: Routes = [
-  {
-    path: 'pages',
-    loadChildren: () => import('./pages/pages.module').then((m) => m.PagesModule),
-    canActivate: [AuthGuardService],
-  },
-  {
-    path: 'login',
-    component: LoginComponent,
-  },
-  {
-    path: 'register',
-    component: RegisterComponent,
-  },
-  {
-    path: '',
-    redirectTo: 'pages',
-    pathMatch: 'full',
-  },
-  {
-    path: '**',
-    redirectTo: 'pages',
-  },
+  { path: '', loadChildren: () => import('./pages/pages.module').then((m) => m.PagesModule),
+  // canActivate: [AuthGuardService]
+       },
+
+  { path: 'login', component: LoginComponent },
+  { path: 'register', component: RegisterComponent },
+
+  { path: '', redirectTo: '', pathMatch: 'full' },
+  { path: '**', redirectTo: '' },
 ];
 
 const config: ExtraOptions = {

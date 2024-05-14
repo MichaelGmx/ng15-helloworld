@@ -8,22 +8,12 @@ const routes: Routes = [
     path: '',
     component: PagesComponent,
     children: [
-      {
-        path: 'getting-started',
-        loadChildren: () =>
-          import('./getting-started/getting-started.module').then(
-            (m) => m.GettingStartedModule
-          )
-      },
-      {
-        path: '',
-        redirectTo: 'getting-started',
-        pathMatch: 'full'
-      },
-      {
-        path: '**',
-        redirectTo: 'getting-started'
-      }
+      { path: 'getting-started', loadChildren: () => import('./getting-started/getting-started.module').then((m) => m.GettingStartedModule) },
+
+      { path: 'angular', loadChildren: () => import('./angular/angular.module').then((m) => m.AngularModule) },
+
+      { path: '', redirectTo: 'getting-started', pathMatch: 'full' },
+      { path: '**', redirectTo: 'getting-started' },
     ]
   }
 ];
