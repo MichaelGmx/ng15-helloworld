@@ -128,6 +128,28 @@ export default function (values: any) {
           ],
         },
         {
+          title: '@angular/forms',
+          link: '/angular/ng-form',
+          children: [
+            {
+              title: '简单示例',
+              link: '/angular/ng-form/simple-form',
+            },
+            {
+              title: 'ngModel',
+              link: '/angular/ng-form/ng-model',
+            },
+            {
+              title: 'Reactive Form',
+              link: '/angular/ng-form/reactive-form',
+            },
+            {
+              title: 'ControlValueAccessor',
+              link: '/angular/ng-form/control-value-accessor',
+            },
+          ],
+        },
+        {
           title: '@angular/animations',
           link: '/angular/ng-animations',
           children: [

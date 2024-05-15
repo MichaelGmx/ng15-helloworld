@@ -1,0 +1,53 @@
+<div class="da-content-banner">
+  <d-breadcrumb>
+    <d-breadcrumb-item>
+      <a routerLink="/">首页</a>
+    </d-breadcrumb-item>
+    <d-breadcrumb-item>Angular</d-breadcrumb-item>
+    <d-breadcrumb-item>@angular/forms</d-breadcrumb-item>
+    <d-breadcrumb-item>ngModel</d-breadcrumb-item>
+  </d-breadcrumb>
+  <div class="da-content-banner-title">
+    ngModel 示例
+  </div>
+  <div class="summary-markdown">
+    <markdown ngPreserveWhitespaces>
+      **ngModel** : 建立 **FormControl** 实例，并绑定在表单控件元素上
+    
+      参考：[官方NgModel API](https://angular.cn/api/forms/NgModel)
+    </markdown>
+  </div>
+</div>
+<div class="da-content-wrapper">
+  <da-layout-row [daGutter]="[24, 24]">
+    <da-col-item [daSpan]="24" [daXs]="24">
+      <div class="da-content-card">
+
+        <h3>使用方法1：</h3>
+        <form #formCtrl="ngForm" (ngSubmit)="onSubmit(formCtrl)" autocomplete="off" novalidate>
+          <input name="email" ngModel required #emailCtrl="ngModel">
+          <input name="phone" ngModel>
+          <d-button type="submit">Submit</d-button>
+        </form>
+
+        <p>Email value: {{ emailCtrl.value }}</p>
+        <p>Email valid: {{ emailCtrl.valid }}</p>
+        <p>Form value: {{ formCtrl.value | json }}</p>
+        <p>Form valid: {{ formCtrl.valid }}</p>
+
+        <hr>
+
+        <h3>使用方法2：</h3>
+        <input type="text" [(ngModel)]="username">
+        <p>username: {{ username }}</p>
+
+        <hr>
+
+        <h3>使用方法3：</h3>
+        <input type="text" [ngModel]="description" (ngModelChange)="changeValue($event)">
+        <p>description: {{ description }}</p>
+
+      </div>
+    </da-col-item>
+  </da-layout-row>
+</div>

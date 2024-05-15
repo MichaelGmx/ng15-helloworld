@@ -1,0 +1,40 @@
+<div class="da-content-banner">
+  <d-breadcrumb>
+    <d-breadcrumb-item>
+      <a routerLink="/">首页</a>
+    </d-breadcrumb-item>
+    <d-breadcrumb-item>Angular</d-breadcrumb-item>
+    <d-breadcrumb-item>@angular/forms</d-breadcrumb-item>
+    <d-breadcrumb-item>ControlValueAccessor</d-breadcrumb-item>
+  </d-breadcrumb>
+  <div class="da-content-banner-title">
+    ControlValueAccessor 示例
+  </div>
+  <div class="summary-markdown">
+    <markdown ngPreserveWhitespaces>
+      ## ControlValueAccessor 接口
+  
+      参考：<br />
+      [Angular ControlValueAccessor - 自定义表单控件介绍与实战](https://hijiangtao.github.io/2020/01/30/Angular-ControlValueAccessor-Introduction-and-Example/)<br />
+      [官方 API](https://angular.cn/api/forms/ControlValueAccessor)
+    </markdown>
+  </div>
+</div>
+<div class="da-content-wrapper">
+  <da-layout-row [daGutter]="[24, 24]">
+    <da-col-item [daSpan]="24" [daXs]="24">
+      <div class="da-content-card">
+
+        <form [formGroup]="helloForm" (ngSubmit)="onSubmit()">
+          <app-counter formControlName="counter"></app-counter>
+          <d-button type="submit">Submit</d-button>
+        </form>
+        
+        <div *ngIf="formResult">
+          结果：{{ formResult | json }}
+        </div>
+
+      </div>
+    </da-col-item>
+  </da-layout-row>
+</div>

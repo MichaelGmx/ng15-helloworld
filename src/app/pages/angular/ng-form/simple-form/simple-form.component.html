@@ -1,0 +1,69 @@
+<div class="da-content-banner">
+  <d-breadcrumb>
+    <d-breadcrumb-item>
+      <a routerLink="/">首页</a>
+    </d-breadcrumb-item>
+    <d-breadcrumb-item>Angular</d-breadcrumb-item>
+    <d-breadcrumb-item>@angular/forms</d-breadcrumb-item>
+    <d-breadcrumb-item>简单示例</d-breadcrumb-item>
+  </d-breadcrumb>
+  <div class="da-content-banner-title">
+    一个简单的表单示例
+  </div>
+  <div class="summary-markdown">
+    <markdown ngPreserveWhitespaces>
+      包含了 **响应式表单 Reactive Form** 的初始化、重置、验证、提交
+    </markdown>
+  </div>
+</div>
+<div class="da-content-wrapper">
+  <da-layout-row [daGutter]="[24, 24]">
+    <da-col-item [daSpan]="24" [daXs]="24">
+      <div class="da-content-card">
+
+        <form [formGroup]="simpleForm" (ngSubmit)="onSubmit()" autocomplete="off" novalidate>
+          <div class="group-item">
+            <label for="name"></label>
+            <input #nameCtrl type="text" name="name" formControlName="name" placeholder="name">
+            <p>name value: {{ nameCtrl.value }}</p>
+          </div>
+          <div class="group-item">
+            <label for="age"></label>
+            <input type="number" name="age" formControlName="age" placeholder="age">
+          </div>
+          <div class="group-item">
+            <label class="radio-item">
+              <input type="radio" name="gender" value="male" formControlName="gender">
+              <span>male</span>
+            </label>
+            <label class="radio-item">
+              <input type="radio" name="gender" value="female" formControlName="gender">
+              <span>female</span>
+            </label>
+          </div>
+          <ng-container formGroupName="address">
+            <div class="group-item">
+              <label for="street"></label>
+              <input type="text" name="street" formControlName="street" placeholder="street">
+            </div>
+            <div class="group-item">
+              <label for="district"></label>
+              <input type="text" name="district" formControlName="district" placeholder="district">
+            </div>
+          </ng-container>
+          <d-button type="submit">Submit</d-button>
+          <d-button (click)="resetForm()" bsStyle="common">Reset</d-button>
+        </form>
+        
+        <hr>
+        
+        <p>FormGroup value: {{ simpleForm.value | json }}</p>
+        <p>FormGroup valid: {{ simpleForm.valid }}</p>
+        <p>FormGroup dirty: {{ simpleForm.dirty }}</p>
+        
+        <p>nameCtrl value: {{ nameCtrl.value }}</p>
+
+      </div>
+    </da-col-item>
+  </da-layout-row>
+</div>

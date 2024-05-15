@@ -1,0 +1,17 @@
+@import "ng-devui/styles-var/devui-var.scss";
+@import "src/app/@shared/styles/common.scss";
+
+.da-content-card {
+  min-height: 300px;
+  padding: 1.5rem;
+}
+
+
+
+section {
+  margin-bottom: 2rem;
+
+  p { margin-bottom: 2px; }
+}
+
+input { margin: 0 8px 8px 0; }

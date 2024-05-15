@@ -1,0 +1,85 @@
+<div class="da-content-banner">
+  <d-breadcrumb>
+    <d-breadcrumb-item>
+      <a routerLink="/">首页</a>
+    </d-breadcrumb-item>
+    <d-breadcrumb-item>Angular</d-breadcrumb-item>
+    <d-breadcrumb-item>@angular/forms</d-breadcrumb-item>
+    <d-breadcrumb-item>ReactiveForm</d-breadcrumb-item>
+  </d-breadcrumb>
+  <div class="da-content-banner-title">
+    ReactiveForm 示例
+  </div>
+  <div class="summary-markdown">
+    <markdown ngPreserveWhitespaces>
+      ## ReactiveForm 响应式表单
+    
+      **AbstractControl** 是 FormControl、FormGroup、FormArray 的抽象基类
+    
+      **FormControl** : 跟踪 独立表单控件的 值 和 验证状态
+    
+      **FormGroup** : 跟踪一组 FormControl 实例的 值 和 验证状态
+    
+      **FormArray** : 跟踪一个控件数组的 FormControl 实例的 值 和 验证状态
+    </markdown>
+  </div>
+</div>
+<div class="da-content-wrapper">
+  <da-layout-row [daGutter]="[24, 24]">
+    <da-col-item [daSpan]="24" [daXs]="24">
+      <div class="da-content-card">
+
+        <section>
+          <h3>Form Control: </h3>
+          <div>
+            <input [formControl]="name">
+            <p>value: {{ name.value }}</p>
+            <p>valid: {{ name.valid }}</p>
+            <p>dirty: {{ name.dirty }}</p>
+            <p>errors: {{ name.errors | json }}</p>
+          </div>
+        </section>
+        
+        <section>
+          <h3>Form Group 1: </h3>
+          <form [formGroup]="form1">
+            <input formControlName="first">
+            <input formControlName="last">
+          </form>
+        </section>
+        
+        <section>
+          <h3>Form Group 2: </h3>
+          <form [formGroup]="form2">
+            <input formControlName="first">
+            <input formControlName="last">
+          </form>
+        </section>
+        
+        <section>
+          <h3>Form Group 3: </h3>
+          <form [formGroup]="form3">
+            <input formControlName="first">
+            <input formControlName="last">
+          </form>
+          <p>Form valid: {{ form3.valid }}</p>
+        </section>
+        
+        <section>
+          <h3>Nested Form: </h3>
+          <form [formGroup]="nestedForm">
+            <input formControlName="name">
+            <ng-container formGroupName="address">
+              <input formControlName="street">
+              <input formControlName="city">
+              <input formControlName="state">
+              <input formControlName="zip">
+            </ng-container>
+          </form>
+          <p>Form value: {{ nestedForm.value | json }}</p>
+        </section>
+
+      </div>
+    </da-col-item>
+  </da-layout-row>
+</div>

@@ -11,6 +11,7 @@ const routes: Routes = [
       { path: 'life-cycle', loadChildren: () => import('./life-cycle/life-cycle.module').then((m) => m.LifeCycleModule) },
       { path: 'ng-common', loadChildren: () => import('./ng-common/ng-common.module').then((m) => m.NgCommonModule) },
       { path: 'ng-core', loadChildren: () => import('./ng-core/ng-core.module').then((m) => m.NgCoreModule) },
+      { path: 'ng-form', loadChildren: () => import('./ng-form/ng-form.module').then((m) => m.NgFormModule) },
       { path: 'ng-animations', loadChildren: () => import('./ng-animations/ng-animations.module').then((m) => m.NgAnimationsModule) },
 
       { path: '', redirectTo: 'life-cycle', pathMatch: 'full' },
