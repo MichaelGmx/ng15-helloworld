@@ -1,0 +1,34 @@
+<div class="da-content-banner">
+  <d-breadcrumb>
+    <d-breadcrumb-item>
+      <a routerLink="/">首页</a>
+    </d-breadcrumb-item>
+    <d-breadcrumb-item>Material</d-breadcrumb-item>
+    <d-breadcrumb-item>cdk</d-breadcrumb-item>
+    <d-breadcrumb-item>cdkDropList</d-breadcrumb-item>
+  </d-breadcrumb>
+  <div class="da-content-banner-title">
+    cdkDropList 示例
+  </div>
+  <div class="summary-markdown">
+    <markdown ngPreserveWhitespaces>
+      参考：[Material CDK 拖放 Drag Drop](https://material.angular.cn/cdk/drag-drop/overview)
+    </markdown>
+  </div>
+</div>
+<div class="da-content-wrapper">
+  <da-layout-row [daGutter]="[24, 24]">
+    <da-col-item [daSpan]="24" [daXs]="24">
+      <div class="da-content-card">
+
+        <div cdkDropList (cdkDropListDropped)="drop($event)" class="example-list">
+          <div *ngFor="let item of lstOfItem" cdkDrag class="example-item">
+            {{ item }}
+            <div *cdkDragPlaceholder class="example-item-custom-placeholder"></div>
+          </div>
+        </div>
+
+      </div>
+    </da-col-item>
+  </da-layout-row>
+</div>

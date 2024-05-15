@@ -192,6 +192,37 @@ export default function (values: any) {
           ],
         }
       ],
-    }
+    },
+    {
+      title: 'Material',
+      menuIcon: 'icon icon-code',
+      link: '/material',
+      children: [
+        {
+          title: 'cdk',
+          link: '/material/cdk',
+          children: [
+            {
+              title: 'cdkDrag',
+              link: '/material/cdk/drag-drop',
+            },
+            {
+              title: 'cdkDropList',
+              link: '/material/cdk/drop-list',
+            },
+          ],
+        },
+        {
+          title: 'components',
+          link: '/material/components',
+          children: [
+            {
+              title: '表格 Table',
+              link: '/material/components/table',
+            },
+          ],
+        },
+      ],
+    },
   ];
 }

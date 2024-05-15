@@ -11,9 +11,10 @@ const routes: Routes = [
       { path: 'getting-started', loadChildren: () => import('./getting-started/getting-started.module').then((m) => m.GettingStartedModule) },
 
       { path: 'angular', loadChildren: () => import('./angular/angular.module').then((m) => m.AngularModule) },
+      { path: 'material', loadChildren: () => import('./material/material.module').then((m) => m.MaterialModule) },
 
-      { path: '', redirectTo: 'getting-started', pathMatch: 'full' },
-      { path: '**', redirectTo: 'getting-started' },
+      { path: '', redirectTo: 'angular', pathMatch: 'full' },
+      { path: '**', redirectTo: 'angular' },
     ]
   }
 ];
