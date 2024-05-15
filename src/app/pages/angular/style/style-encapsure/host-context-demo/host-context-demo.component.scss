@@ -1,0 +1,24 @@
+:host {
+  --success-color: rgb(45, 192, 65);
+  --error-color: rgb(197, 48, 48);
+
+  button {
+    padding: 0.4rem 1rem;
+    border: solid 1px #333;
+    border-radius: 5px;
+    font-size: 1rem;
+  }
+}
+
+
+:host-context(.success-theme) {
+  .btn-theme {
+    background-color: var(--success-color);
+  }
+}
+
+:host-context(.error-theme) {
+  .btn-theme {
+    background-color: var(--error-color);
+  }
+}

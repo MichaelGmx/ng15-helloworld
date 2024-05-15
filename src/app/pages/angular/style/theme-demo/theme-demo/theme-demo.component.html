@@ -1,0 +1,33 @@
+<div class="da-content-banner">
+  <d-breadcrumb>
+    <d-breadcrumb-item>
+      <a routerLink="/">首页</a>
+    </d-breadcrumb-item>
+    <d-breadcrumb-item>Angular</d-breadcrumb-item>
+    <d-breadcrumb-item>样式</d-breadcrumb-item>
+    <d-breadcrumb-item>Theme</d-breadcrumb-item>
+  </d-breadcrumb>
+  <div class="da-content-banner-title">
+    Theme
+  </div>
+  <!-- <div class="summary-markdown"></div> -->
+</div>
+<div class="da-content-wrapper">
+  <da-layout-row [daGutter]="[24, 24]">
+    <da-col-item [daSpan]="24" [daXs]="24">
+      <div class="da-content-card">
+
+        <d-tabs type="slider" size="lg"
+          [(activeTab)]="currentThemeCode"
+          (activeTabChange)="activeTabChange($event)">
+          <d-tab *ngFor="let item of lstOfTheme" [id]="item.code" [title]="item.text"></d-tab>
+        </d-tabs>
+
+        <section class="{{currentThemeCode}}">
+          <app-theme-demo-child></app-theme-demo-child>
+        </section>
+
+      </div>
+    </da-col-item>
+  </da-layout-row>
+</div>

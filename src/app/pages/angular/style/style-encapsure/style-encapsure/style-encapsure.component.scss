@@ -1,0 +1,68 @@
+// reset style
+@import "ng-devui/styles-var/devui-var.scss";
+@import "src/app/@shared/styles/common.scss";
+
+.da-content-card {
+  min-height: 300px;
+  padding: 1.5rem;
+}
+
+
+
+:host {
+  --title-text-color: #333;
+  --description-text-color: #666;
+
+  button {
+    padding: 0.4rem 1rem;
+    border: solid 1px #333;
+    border-radius: 5px;
+    font-size: 1rem;
+  }
+}
+
+section { margin-bottom: 32px; }
+
+.header {
+  margin-bottom: 6px;
+
+  .title {
+    font-size: 16px;
+    font-weight: bold;
+    color: var(--title-text-color);
+    margin-bottom: 0;
+  }
+
+  .desci {
+    font-size: 14px;
+    color: var(--description-text-color);
+  }
+}
+
+
+
+.host {
+  app-host-demo {
+    margin-right: 8px;
+  }
+}
+
+.host-context {
+  .content > div {
+    display: inline-block;
+    margin-right: 8px;
+  }
+}
+
+.ng-deep-demo {
+  ::ng-deep {
+    button {
+      padding: 0.4rem 1rem;
+      border: solid 1px #333;
+      border-radius: 5px;
+      font-size: 1rem;
+
+      background-color: rgb(45, 192, 65);
+    }
+  }
+}

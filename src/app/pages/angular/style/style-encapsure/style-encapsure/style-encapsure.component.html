@@ -1,0 +1,85 @@
+
+<div class="da-content-banner">
+  <d-breadcrumb>
+    <d-breadcrumb-item>
+      <a routerLink="/">首页</a>
+    </d-breadcrumb-item>
+    <d-breadcrumb-item>Angular</d-breadcrumb-item>
+    <d-breadcrumb-item>样式</d-breadcrumb-item>
+    <d-breadcrumb-item>样式封装机制</d-breadcrumb-item>
+  </d-breadcrumb>
+  <div class="da-content-banner-title">
+    样式封装机制
+  </div>
+  <div class="summary-markdown">
+    <markdown ngPreserveWhitespaces>
+      ## 样式封装机制 Emulated Encapsulation
+  
+      参考文章：<br>
+      [【翻译】Angular :host、 :host-context 、ng-content 用法](https://www.jianshu.com/p/73e423fe271c)
+    </markdown>
+  </div>
+</div>
+<div class="da-content-wrapper">
+  <da-layout-row [daGutter]="[24, 24]">
+    <da-col-item [daSpan]="24" [daXs]="24">
+      <div class="da-content-card">
+
+        <section class="root">
+          <div class="header">
+            <p class="title">:root</p>
+            <div class="desci">为 html元素 设置样式，相对于全局公用</div>
+          </div>
+        </section>
+        
+        
+        
+        <section class="host">
+          <div class="header">
+            <p class="title">:host</p>
+            <div class="desci">为组件自身 设置样式</div>
+          </div>
+        
+          <div class="content">
+            <app-host-demo class="btn-success"></app-host-demo>
+            <app-host-demo class="btn-error"></app-host-demo>
+          </div>
+        </section>
+        
+        
+        
+        <section class="host-context">
+          <div class="header">
+            <p class="title">:host-context()</p>
+            <div class="desci">组件内元素 根据其 父元素 属性而设置样式</div>
+          </div>
+          
+          <div class="content">
+            <div class="success-theme">
+              <app-host-context-demo></app-host-context-demo>
+            </div>
+            <div class="error-theme">
+              <app-host-context-demo></app-host-context-demo>
+            </div>
+          </div>
+        </section>
+        
+        
+        
+        <section class="ng-deep-demo">
+          <div class="header">
+            <p class="title">::ng-deep</p>
+            <div class="desci">穿透型 作用于子组件 设置样式（注：此方式将会废弃）</div>
+          </div>
+        
+          <div class="content">
+            <app-ng-deep-demo></app-ng-deep-demo>
+          </div>
+        </section>
+
+      </div>
+    </da-col-item>
+  </da-layout-row>
+</div>
+
+

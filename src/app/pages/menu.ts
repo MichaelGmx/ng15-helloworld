@@ -164,6 +164,20 @@ export default function (values: any) {
           ],
         },
         {
+          title: '样式',
+          link: '/angular/style',
+          children: [
+            {
+              title: '样式封装',
+              link: '/angular/style/style-encapsure',
+            },
+            {
+              title: '主题 Theme',
+              link: '/angular/style/theme',
+            },
+          ],
+        },
+        {
           title: '@angular/animations',
           link: '/angular/ng-animations',
           children: [

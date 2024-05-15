@@ -1,0 +1,25 @@
+:host {
+  --success-color: rgb(45, 192, 65);
+  --error-color: rgb(197, 48, 48);
+
+  button {
+    padding: 0.4rem 1rem;
+    border: solid 1px #333;
+    border-radius: 5px;
+    font-size: 1rem;
+  }
+}
+
+
+
+:host(.btn-success) {
+  button {
+    background-color: var(--success-color);
+  }
+}
+
+:host(.btn-error) {
+  button {
+    background-color: var(--error-color);
+  }
+}
