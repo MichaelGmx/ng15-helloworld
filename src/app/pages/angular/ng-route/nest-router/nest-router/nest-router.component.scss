@@ -1,0 +1,25 @@
+@import "ng-devui/styles-var/devui-var.scss";
+@import "src/app/@shared/styles/common.scss";
+
+.da-content-card {
+  min-height: 300px;
+  padding: 1.5rem;
+}
+
+
+nav {
+  margin-bottom: 1rem;
+}
+
+ul {
+  li {
+    display: inline-block;
+    margin-right: .5rem;
+
+    a {
+      font-size: 1rem;
+      background-color: #eee;
+      padding: .5rem 1rem;
+    }
+  }
+}

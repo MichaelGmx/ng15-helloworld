@@ -150,6 +150,20 @@ export default function (values: any) {
           ],
         },
         {
+          title: '@angular/router',
+          link: '/angular/ng-route',
+          children: [
+            {
+              title: 'ActivatedRoute',
+              link: '/angular/ng-route/activated-route',
+            },
+            {
+              title: '嵌套路由',
+              link: '/angular/ng-route/nest-router',
+            },
+          ],
+        },
+        {
           title: '@angular/animations',
           link: '/angular/ng-animations',
           children: [
