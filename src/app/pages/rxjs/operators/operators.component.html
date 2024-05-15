@@ -1,0 +1,61 @@
+<div class="da-content-banner">
+  <d-breadcrumb>
+    <d-breadcrumb-item>
+      <a routerLink="/">首页</a>
+    </d-breadcrumb-item>
+    <d-breadcrumb-item>rxjs</d-breadcrumb-item>
+    <d-breadcrumb-item>operators</d-breadcrumb-item>
+  </d-breadcrumb>
+  <div class="da-content-banner-title">
+    operators
+  </div>
+  <div class="summary-markdown">
+    <markdown ngPreserveWhitespaces>
+      ## RxJs
+  
+      [官方中文 入门](https://cn.rx.js.org/manual/overview.html)<br>
+      [学习 RxJs](https://rxjs-cn.github.io/learn-rxjs-operators/)
+    </markdown>
+  </div>
+</div>
+<div class="da-content-wrapper">
+  <da-layout-row [daGutter]="[24, 24]">
+    <da-col-item [daSpan]="24" [daXs]="24">
+      <div class="da-content-card">
+
+        <p>打开控制台Console，查看结果</p>
+        <br>
+
+        <div>
+          <d-button (click)="takeFn()">take</d-button>
+          <d-button (click)="firstFn()">first</d-button>
+          <d-button (click)="lastFn()">last</d-button>
+          <d-button (click)="skipFn()">skip</d-button>
+        </div>
+
+        <div>
+          <d-button (click)="mapFn()">map</d-button>
+          <d-button (click)="pluckFn()">pluck</d-button>
+          <d-button (click)="distinctUntilChangedFn()">distinctUntilChanged</d-button>
+          <d-button (click)="mergeMapFn()">mergeMap</d-button>
+          <d-button (click)="switchMapFn()">switchMap</d-button>
+          <d-button (click)="reduceFn()">reduce</d-button>
+          <d-button (click)="scanFn()">scan</d-button>
+        </div>
+
+        <div>
+          <d-button (click)="mergeFn()">merge</d-button>
+          <d-button (click)="forkJoinFn()">forkJoin</d-button>
+          <d-button (click)="concatFn()">concat</d-button>
+          <d-button (click)="zipFn()">zip</d-button>
+          <d-button (click)="raceFn()">race</d-button>
+        </div>
+
+        <div>
+          <d-button (click)="shareFn()">share</d-button>
+        </div>
+
+      </div>
+    </da-col-item>
+  </da-layout-row>
+</div>

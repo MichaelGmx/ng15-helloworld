@@ -1,0 +1,51 @@
+<div class="da-content-banner">
+  <d-breadcrumb>
+    <d-breadcrumb-item>
+      <a routerLink="/">首页</a>
+    </d-breadcrumb-item>
+    <d-breadcrumb-item>rxjs</d-breadcrumb-item>
+    <d-breadcrumb-item>observable</d-breadcrumb-item>
+  </d-breadcrumb>
+  <div class="da-content-banner-title">
+    observable
+  </div>
+  <div class="summary-markdown">
+    <markdown ngPreserveWhitespaces>
+      ## RxJs
+  
+      [官方中文 入门](https://cn.rx.js.org/manual/overview.html)<br>
+      [学习 RxJs](https://rxjs-cn.github.io/learn-rxjs-operators/)
+    </markdown>
+  </div>
+</div>
+<div class="da-content-wrapper">
+  <da-layout-row [daGutter]="[24, 24]">
+    <da-col-item [daSpan]="24" [daXs]="24">
+      <div class="da-content-card">
+
+        <p>打开控制台Console，查看结果</p>
+        <br>
+
+        <div>
+          <d-button (click)="firstFn()">第一个示例</d-button>
+
+          <d-button (click)="secondFn()">执行顺序</d-button>
+
+          <d-button (click)="thridFn()">创建Observable</d-button>
+
+          <d-button (click)="fourthFn()">Observer的完整调用</d-button>
+        </div>
+
+        <div>
+          <d-button (click)="start()">开始订阅</d-button>
+          <d-button (click)="cancel()">取消订阅</d-button>
+        </div>
+
+        <div>
+          <d-button (click)="subscriptionMulti()">合并subscription</d-button>
+        </div>
+
+      </div>
+    </da-col-item>
+  </da-layout-row>
+</div>

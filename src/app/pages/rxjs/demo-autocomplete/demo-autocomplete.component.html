@@ -1,0 +1,40 @@
+<div class="da-content-banner">
+  <d-breadcrumb>
+    <d-breadcrumb-item>
+      <a routerLink="/">首页</a>
+    </d-breadcrumb-item>
+    <d-breadcrumb-item>rxjs</d-breadcrumb-item>
+    <d-breadcrumb-item>Demo - 实现AutoComplete</d-breadcrumb-item>
+  </d-breadcrumb>
+  <div class="da-content-banner-title">
+    Demo - 实现AutoComplete
+  </div>
+  <div class="summary-markdown">
+    <markdown ngPreserveWhitespaces>
+      ## RxJs
+  
+      [官方中文 入门](https://cn.rx.js.org/manual/overview.html)<br>
+      [学习 RxJs](https://rxjs-cn.github.io/learn-rxjs-operators/)
+    </markdown>
+  </div>
+</div>
+<div class="da-content-wrapper">
+  <da-layout-row [daGutter]="[24, 24]">
+    <da-col-item [daSpan]="24" [daXs]="24">
+      <div class="da-content-card">
+
+        <p>输入 <b>cat</b>, 查看联想结果</p>
+        <br>
+
+        <div>
+          <input #input class="form-control" placeholder="search..." />
+
+          <ul *ngIf="list && list.length > 0">
+            <li *ngFor="let item of list">{{ item }}</li>
+          </ul>
+        </div>
+
+      </div>
+    </da-col-item>
+  </da-layout-row>
+</div>

@@ -243,5 +243,32 @@ export default function (values: any) {
         },
       ],
     },
+    {
+      title: 'RxJS',
+      menuIcon: 'icon icon-code',
+      link: '/rxjs',
+      children: [
+        {
+          title: '第一次尝试',
+          link: '/rxjs/first-rxjs',
+        },
+        {
+          title: 'observable',
+          link: '/rxjs/observable',
+        },
+        {
+          title: 'subject',
+          link: '/rxjs/subject',
+        },
+        {
+          title: 'operators',
+          link: '/rxjs/operators',
+        },
+        {
+          title: 'Demo - 实现Autocomplete',
+          link: '/rxjs/demo-autocomplete',
+        },
+      ],
+    },
   ];
 }

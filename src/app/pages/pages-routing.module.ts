@@ -13,6 +13,7 @@ const routes: Routes = [
       { path: 'angular', loadChildren: () => import('./angular/angular.module').then((m) => m.AngularModule) },
       { path: 'material', loadChildren: () => import('./material/material.module').then((m) => m.MaterialModule) },
       { path: 'google-map', loadChildren: () => import('./google-map/google-map.module').then((m) => m.GoogleMapModule) },
+      { path: 'rxjs', loadChildren: () => import('./rxjs/rxjs.module').then((m) => m.RxjsModule) },
 
       { path: '', redirectTo: 'angular', pathMatch: 'full' },
       { path: '**', redirectTo: 'angular' },
