@@ -1,0 +1,35 @@
+<div class="da-content-banner">
+  <d-breadcrumb>
+    <d-breadcrumb-item>
+      <a routerLink="/">首页</a>
+    </d-breadcrumb-item>
+    <d-breadcrumb-item>Google Map</d-breadcrumb-item>
+    <d-breadcrumb-item>StreetView 街景</d-breadcrumb-item>
+  </d-breadcrumb>
+  <div class="da-content-banner-title">
+    街景StreetView 示例
+  </div>
+  <div class="summary-markdown">
+    <markdown ngPreserveWhitespaces>
+      官方推荐使用 **@angular/google-map**
+    </markdown>
+  </div>
+</div>
+<div class="da-content-wrapper">
+  <da-layout-row [daGutter]="[24, 24]">
+    <da-col-item [daSpan]="24" [daXs]="24">
+      <div class="da-content-card">
+
+        <div class="map-container">
+          <google-map width="100%" height="100%" 
+            [options]="mapOptions" 
+            (mapInitialized)="onMapReady($event)">
+          </google-map>
+        </div>
+        
+        <div id="pano"></div>
+
+      </div>
+    </da-col-item>
+  </da-layout-row>
+</div>

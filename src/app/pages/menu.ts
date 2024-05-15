@@ -224,5 +224,24 @@ export default function (values: any) {
         },
       ],
     },
+    {
+      title: 'Google Map',
+      menuIcon: 'icon icon-gps',
+      link: '/google-map',
+      children: [
+        {
+          title: 'Geocoder 地址转义',
+          link: '/google-map/geocoder',
+        },
+        {
+          title: 'Direction 路线规划',
+          link: '/google-map/direction',
+        },
+        {
+          title: 'StreetView 街景',
+          link: '/google-map/street-view',
+        },
+      ],
+    },
   ];
 }

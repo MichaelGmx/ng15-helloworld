@@ -1,0 +1,38 @@
+@import "ng-devui/styles-var/devui-var.scss";
+@import "src/app/@shared/styles/common.scss";
+
+.da-content-card {
+  min-height: 300px;
+  padding: 1.5rem;
+
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+}
+
+
+
+.map-container {
+  width: 600px;
+  height: 400px;
+}
+
+.edit-panel {
+  margin-left: 12px;
+
+  form {
+    .input-item {
+      margin-bottom: 12px;
+
+      .title {
+        display: inline-block;
+        min-width: 100px;
+        margin-right: 12px;
+      }
+
+      input {
+        width: 400px;
+      }
+    }
+  }
+}
