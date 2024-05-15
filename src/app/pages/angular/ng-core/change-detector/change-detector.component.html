@@ -1,0 +1,43 @@
+<div class="da-content-banner">
+  <d-breadcrumb>
+    <d-breadcrumb-item>
+      <a routerLink="/">首页</a>
+    </d-breadcrumb-item>
+    <d-breadcrumb-item>Angular</d-breadcrumb-item>
+    <d-breadcrumb-item>@angular/core</d-breadcrumb-item>
+    <d-breadcrumb-item>ChangeDetection</d-breadcrumb-item>
+  </d-breadcrumb>
+  <div class="da-content-banner-title">
+    ChangeDetection 示例
+  </div>
+  <div class="summary-markdown">
+    <markdown ngPreserveWhitespaces>
+      ## ChangeDetection 变更检测
+  
+      **detach()** 脱离 变更检测<br>
+      **reattach()** 重新链接入 变更检测<br>
+      **detectChanges()** 手动触发 变更检测<br>
+    </markdown>
+  </div>
+</div>
+<div class="da-content-wrapper">
+  <da-layout-row [daGutter]="[24, 24]">
+    <da-col-item [daSpan]="24" [daXs]="24">
+      <div class="da-content-card">
+
+        <div>
+          <label class="ux-chip">{{ count }}</label>
+          <d-button (click)="add()" icon="icon-add" bsStyle="primary" title="add" shape="circle"></d-button>
+        </div>
+
+        <div>
+          <d-button (click)="detach()" bsStyle="danger">detach()</d-button>
+
+          <d-button (click)="reattach()" bsStyle="common">reattach()</d-button>
+          <d-button (click)="trigger()" bsStyle="primary">detectChanges()</d-button>
+        </div>
+
+      </div>
+    </da-col-item>
+  </da-layout-row>
+</div>

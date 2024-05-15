@@ -10,15 +10,65 @@
   <div class="da-content-banner-title">
     依赖注入
   </div>
-  <div>
-    依赖注入 示例
+  <div class="summary-markdown">
+    <markdown ngPreserveWhitespaces>
+      ## 依赖注入 Depedency Inject
+  
+      查看 ts中注释部分<br>
+      [官方 API](https://angular.cn/guide/dependency-injection)
+    </markdown>
   </div>
 </div>
 <div class="da-content-wrapper">
   <da-layout-row [daGutter]="[24, 24]">
     <da-col-item [daSpan]="24" [daXs]="24">
       <div class="da-content-card">
-        内容
+
+        <p>1. useClass(最常见使用方式):</p>
+        <inject-use-class></inject-use-class>
+
+
+        <hr />
+
+
+        <p>2. useClass(提供 不同于令牌的类):</p>
+        <inject-use-class-inherit></inject-use-class-inherit>
+
+
+        <hr />
+
+
+        <p>3. useClass(提供 不同于令牌的类, 且替代类有自己的依赖项):</p>
+        <inject-use-class-inherit-adv></inject-use-class-inherit-adv>
+
+
+        <hr />
+
+
+        <p>4. useExisting(指向已注册的服务，别名提供者):</p>
+        <inject-use-existing></inject-use-existing>
+
+
+        <hr />
+
+
+        <p>5. useFactory(工厂提供者):</p>
+        <inject-use-factory></inject-use-factory>
+
+
+        <hr />
+
+
+        <p>6. useValue(值 提供者):</p>
+        <inject-use-value></inject-use-value>
+
+
+        <hr />
+
+
+        <p>7. InjectionToken 自定义令牌 的使用:</p>
+        <injection-token></injection-token>
+
       </div>
     </da-col-item>
   </da-layout-row>

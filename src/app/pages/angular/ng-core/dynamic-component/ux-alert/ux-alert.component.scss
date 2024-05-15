@@ -1,0 +1,38 @@
+.ux-alert {
+  height: 50px;
+  position: fixed;
+  top: 5rem;
+  right: 1rem;
+  z-index: 10000;
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 4px;
+  padding: 1rem 3rem 1rem 1rem;
+
+  &.primary {
+    color: #004085;
+    background-color: #cce5ff;
+    border-color: #b8daff;
+  }
+
+  &.success {
+    color: #155724;
+    background-color: #d4edda;
+    border-color: #c3e6cb;
+  }
+
+  &.danger {
+    color: #721c24;
+    background-color: #f8d7da;
+    border-color: #f5c6cb;
+  }
+
+  d-icon {
+    position: absolute;
+    top: 50%;
+    right: 8px;
+    font-size: 16px;
+    margin-top: -8px;
+    cursor: pointer;
+  }
+}

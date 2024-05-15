@@ -1,0 +1,49 @@
+<div class="da-content-banner">
+  <d-breadcrumb>
+    <d-breadcrumb-item>
+      <a routerLink="/">首页</a>
+    </d-breadcrumb-item>
+    <d-breadcrumb-item>Angular</d-breadcrumb-item>
+    <d-breadcrumb-item>@angular/core</d-breadcrumb-item>
+    <d-breadcrumb-item>ChangeDetectionStrategy</d-breadcrumb-item>
+  </d-breadcrumb>
+  <div class="da-content-banner-title">
+    ChangeDetectionStrategy 示例
+  </div>
+  <div class="summary-markdown">
+    <markdown ngPreserveWhitespaces>
+      ## ChangeDetectionStrategy 变更检测策略
+  
+      使用了 **OnPush** 策略，可以有效的减少DOM重绘的负担
+  
+      设置了OnPush后，如需要触发 变更检测，可以：<br>
+      > 1.@Input 引用发生变化（如果是对象类型，则其属性变化时，是不触发的）<br>
+      > 2.组件自己或子组件的Event（不包含setTimeout、setInterval、Promise、XHR 内部）<br>
+      > 3.手动触发(显示的) 触发 变更检测，**changeDetectorRef.detectChanges()**、**changeDetectorRef.markForCheck()**、**ApplicationRef.tick()** <br>
+      > 4.async Pipe<br>
+
+      参考：<br>
+      [Angular变更检测机制以及对应性能优化](https://juejin.cn/post/7093770971588329508)<br>
+      [[译]深入理解Angular onPush变更检测策略](https://zhuanlan.zhihu.com/p/96486260)<br>
+      [互动图解 变更检测策略](https://danielwiehl.github.io/edu-angular-change-detection/)<br>
+      [比较 detectChanges、markForCheck的不同](https://stackoverflow.com/a/41364469/10577983)
+    </markdown>
+  </div>
+</div>
+<div class="da-content-wrapper">
+  <da-layout-row [daGutter]="[24, 24]">
+    <da-col-item [daSpan]="24" [daXs]="24">
+      <div class="da-content-card">
+
+        <p>Default:</p>
+        <app-default-strategy></app-default-strategy>
+
+        <hr />
+
+        <p>On Push:</p>
+        <app-on-push-strategy></app-on-push-strategy>
+
+      </div>
+    </da-col-item>
+  </da-layout-row>
+</div>

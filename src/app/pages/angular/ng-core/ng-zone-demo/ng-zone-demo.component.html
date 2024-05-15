@@ -1,0 +1,35 @@
+<div class="da-content-banner">
+  <d-breadcrumb>
+    <d-breadcrumb-item>
+      <a routerLink="/">首页</a>
+    </d-breadcrumb-item>
+    <d-breadcrumb-item>Angular</d-breadcrumb-item>
+    <d-breadcrumb-item>@angular/core</d-breadcrumb-item>
+    <d-breadcrumb-item>ngZone</d-breadcrumb-item>
+  </d-breadcrumb>
+  <div class="da-content-banner-title">
+    ngZone 示例
+  </div>
+  <div class="summary-markdown">
+    
+  </div>
+</div>
+<div class="da-content-wrapper">
+  <da-layout-row [daGutter]="[24, 24]">
+    <da-col-item [daSpan]="24" [daXs]="24">
+      <div class="da-content-card">
+
+        <h3>Progress: {{progress}}%</h3>
+
+        <d-button (click)="processWithinAngularZone()" style="margin-right: .5rem;">
+          Process <b>within</b> Angular Zone
+        </d-button>
+
+        <d-button (click)="processOutsideAngularZone()">
+          Process <b>outside</b> Angular Zone
+        </d-button>
+
+      </div>
+    </da-col-item>
+  </da-layout-row>
+</div>

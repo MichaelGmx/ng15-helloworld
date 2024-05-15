@@ -5,3 +5,18 @@
   min-height: 300px;
   padding: 1.5rem;
 }
+
+
+
+section {
+  margin-top: 20px;
+  border-bottom: solid 1px #ccc;
+}
+
+.action-bar {
+  border-bottom: none;
+
+  d-button {
+    margin: 0 8px 8px 0;
+  }
+}

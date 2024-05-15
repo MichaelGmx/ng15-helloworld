@@ -1,0 +1,9 @@
+<div dLoading [showLoading]="itemLoading" style="width: 300px;">
+
+  <ul *ngIf="lstOfItem.length > 0 && !itemLoading">
+    <li *ngFor="let item of lstOfItem">
+      {{ item }}
+    </li>
+  </ul>
+
+</div>

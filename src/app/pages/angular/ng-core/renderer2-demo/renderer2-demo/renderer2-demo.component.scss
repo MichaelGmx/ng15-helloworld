@@ -1,0 +1,24 @@
+@import "ng-devui/styles-var/devui-var.scss";
+@import "src/app/@shared/styles/common.scss";
+
+.da-content-card {
+  min-height: 300px;
+  padding: 1.5rem;
+}
+
+
+.test-box {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  z-index: 99999;
+  width: 100px;
+  height: 80px;
+  background-color: coral;
+
+  cursor: move;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

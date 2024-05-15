@@ -1,0 +1,17 @@
+<h3>这是多个插槽 示例</h3>
+
+<section>
+  <div class="header">
+    <ng-content select="header"></ng-content>
+  </div>
+  <div class="content">
+    <ng-content></ng-content>
+  </div>
+  <div class="more-content">
+    <ng-content select=".more"></ng-content>
+    <ng-content select="[attr1]"></ng-content>
+  </div>
+  <div class="footer">
+    <ng-content select="#footer"></ng-content>
+  </div>
+</section>

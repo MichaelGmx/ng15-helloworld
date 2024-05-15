@@ -1,0 +1,23 @@
+@import "ng-devui/styles-var/devui-var.scss";
+@import "src/app/@shared/styles/common.scss";
+
+.da-content-card {
+  min-height: 300px;
+  padding: 1.5rem;
+}
+
+
+
+.ux-chip {
+  display: inline-block;
+  color: #333;
+  font-size: 18px;
+  font-weight: bold;
+  background-color: #eee;
+  padding: 2px 8px;
+  margin: 1rem;
+}
+
+d-button {
+  margin-right: 1rem;
+}

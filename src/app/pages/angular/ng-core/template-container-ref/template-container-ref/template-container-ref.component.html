@@ -1,0 +1,93 @@
+<div class="da-content-banner">
+  <d-breadcrumb>
+    <d-breadcrumb-item>
+      <a routerLink="/">首页</a>
+    </d-breadcrumb-item>
+    <d-breadcrumb-item>Angular</d-breadcrumb-item>
+    <d-breadcrumb-item>@angular/core</d-breadcrumb-item>
+    <d-breadcrumb-item>TemplateRef ViewContainerRef</d-breadcrumb-item>
+  </d-breadcrumb>
+  <div class="da-content-banner-title">
+    TemplateRef ViewContainerRef 示例
+  </div>
+  <div class="summary-markdown">
+    <markdown ngPreserveWhitespaces>
+      ## TemplateRef ViewContainerRef
+  
+      [TemplateRef API](https://angular.cn/api/core/TemplateRef)<br>
+      [ViewContainerRef API](https://angular.cn/api/core/ViewContainerRef)<br>
+      [EmbeddedViewRef API](https://angular.cn/api/core/EmbeddedViewRef)
+    </markdown>
+  </div>
+</div>
+<div class="da-content-wrapper">
+  <da-layout-row [daGutter]="[24, 24]">
+    <da-col-item [daSpan]="24" [daXs]="24">
+      <div class="da-content-card">
+
+        <section #box class="action-bar">
+          <d-button (click)="insert(secondTpl)" bsStyle="common">Insert SecondTpl</d-button>
+          <d-button (click)="insert(thirdTpl)" bsStyle="common">Insert ThirdTpl</d-button>
+          <d-button (click)="insertAll()">Insert All</d-button>
+        </section>
+        <section class="action-bar">
+          <d-button (click)="createCustomEmbeddedViewTo3()" bsStyle="common">容器1创建自定义内嵌视图，并放置到index3</d-button>
+          <d-button (click)="insertFreeToIndex_1()" bsStyle="common">Insert FreeTpl to Index 1</d-button>
+          <d-button (click)="move()" bsStyle="common">Move FreeTpl To Index 2</d-button>
+        </section>
+        <section class="action-bar">
+          <d-button (click)="move2To4()" bsStyle="danger">取出第2个元素 再插入到第4(取出元素后，元素列表自动上移)</d-button>
+        </section>
+        <section class="action-bar">
+          <d-button (click)="detachLast()" bsStyle="common">取出 最后一个元素</d-button>
+          <d-button (click)="moveToOther()" bsStyle="common">将容器1中最后一个元素 移动至 容器2里</d-button>
+        </section>
+        <section class="action-bar">
+          <d-button (click)="getOne()" bsStyle="common">Get One</d-button>
+        </section>
+        
+        
+        
+        <!-- 容器 -->
+        <section>
+          <p>
+            容器1：
+            <d-button (click)="clearAll()" bsStyle="danger">Clear</d-button>
+          </p>
+          <ng-container #firstContainer></ng-container>
+        </section>
+        
+        <section>
+          <p>
+            容器2：
+            <d-button (click)="clearAll2()" bsStyle="danger">Clear</d-button>
+          </p>
+          <ng-container #secondContainer></ng-container>
+        </section>
+        
+        
+        <!-- 模板 -->
+        <ng-template #firstTpl>
+          <p>first tpl content</p>
+        </ng-template>
+        
+        <ng-template #secondTpl>
+          <p>second tpl content</p>
+        </ng-template>
+        
+        <ng-template #thirdTpl>
+          <p>third tpl content</p>
+        </ng-template>
+        
+        <ng-template #freeTpl>
+          <p>Free tpl content</p>
+        </ng-template>
+        
+        <ng-template #customTpl let-param let-param2="customParam">
+          <p>Custom tpl content - {{ param }} - {{ param2 }}</p>
+        </ng-template>
+
+      </div>
+    </da-col-item>
+  </da-layout-row>
+</div>

@@ -83,7 +83,47 @@ export default function (values: any) {
           children: [
             {
               title: '依赖注入',
-              link: '/angular/ng-core/inject-demo',
+              link: '/angular/ng-core/inject',
+            },
+            {
+              title: 'ngZone',
+              link: '/angular/ng-core/ng-zone',
+            },
+            {
+              title: 'Renderer2',
+              link: '/angular/ng-core/renderer2',
+            },
+            {
+              title: 'Change Detector',
+              link: '/angular/ng-core/change-detector',
+            },
+            {
+              title: '变更检测策略',
+              link: '/angular/ng-core/change-detection-strategy',
+            },
+            {
+              title: 'TemplateRef ViewContainerRef',
+              link: '/angular/ng-core/template-container-ref',
+            },
+            {
+              title: '内容投影 ng-content',
+              link: '/angular/ng-core/ng-content',
+            },
+            {
+              title: '@ViewChild @ViewChildren',
+              link: '/angular/ng-core/view-child',
+            },
+            {
+              title: '@ContentChild @ContentChildren',
+              link: '/angular/ng-core/content-child',
+            },
+            {
+              title: '动态组件',
+              link: '/angular/ng-core/dynamic-component',
+            },
+            {
+              title: 'ViewContainerRef(不全面)',
+              link: '/angular/ng-core/view-container',
             },
           ],
         },

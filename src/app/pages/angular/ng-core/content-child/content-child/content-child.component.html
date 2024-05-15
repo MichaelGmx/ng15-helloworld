@@ -1,0 +1,44 @@
+<div class="da-content-banner">
+  <d-breadcrumb>
+    <d-breadcrumb-item>
+      <a routerLink="/">首页</a>
+    </d-breadcrumb-item>
+    <d-breadcrumb-item>Angular</d-breadcrumb-item>
+    <d-breadcrumb-item>@angular/core</d-breadcrumb-item>
+    <d-breadcrumb-item>@ContentChild @ContentChildren</d-breadcrumb-item>
+  </d-breadcrumb>
+  <div class="da-content-banner-title">
+    @ContentChild @ContentChildren 示例
+  </div>
+  <div class="summary-markdown">
+    <markdown ngPreserveWhitespaces>
+      ## @ContentChild @ContentChildren
+  
+      一般情况，在 **ngAfterContentInit**、**ngAfterViewInit** 中 调用 获取的元素<br>
+      @ContentChild 设置 **static: true**，表示在 **变更检测前** 获取元素，即可在 **ngOnInit** 中使用<br>
+      @ContentChildren 没有 static 设置属性，所以不能在ngOnInit中使用<br>
+      @ContentChildren 设置 **descendants: true**，可以获取到 **嵌套层级内部** 的元素<br>
+    </markdown>
+  </div>
+</div>
+<div class="da-content-wrapper">
+  <da-layout-row [daGutter]="[24, 24]">
+    <da-col-item [daSpan]="24" [daXs]="24">
+      <div class="da-content-card">
+
+        <app-content-child-panel>
+          <div class="head">
+            Header Content
+          </div>
+          <div #list>
+            List Content
+            <app-content-child-child></app-content-child-child>
+          </div>
+          <app-content-child-child></app-content-child-child>
+          <app-content-child-child></app-content-child-child>
+        </app-content-child-panel>        
+
+      </div>
+    </da-col-item>
+  </da-layout-row>
+</div>

@@ -1,0 +1,51 @@
+<div class="da-content-banner">
+  <d-breadcrumb>
+    <d-breadcrumb-item>
+      <a routerLink="/">首页</a>
+    </d-breadcrumb-item>
+    <d-breadcrumb-item>Angular</d-breadcrumb-item>
+    <d-breadcrumb-item>@angular/core</d-breadcrumb-item>
+    <d-breadcrumb-item>@ViewChild @ViewChildren</d-breadcrumb-item>
+  </d-breadcrumb>
+  <div class="da-content-banner-title">
+    @ViewChild @ViewChildren 示例
+  </div>
+  <div class="summary-markdown">
+    <markdown ngPreserveWhitespaces>
+      ## @ViewChild @ViewChildren
+  
+      一般情况，在 **ngAfterViewInit** 中 调用 获取的元素<br>
+      @ViewChild 设置 **static: true**，表示在 **变更检测前** 获取元素，即可在 **ngOnInit** 中使用<br>
+      @ViewChildren 没有 static 设置属性，所以不能在ngOnInit中使用<br>
+    </markdown>
+  </div>
+</div>
+<div class="da-content-wrapper">
+  <da-layout-row [daGutter]="[24, 24]">
+    <da-col-item [daSpan]="24" [daXs]="24">
+      <div class="da-content-card">
+
+        <section>
+          <h3>获取dom</h3>
+          <div class="box" #box>
+            <p>box</p>
+          </div>
+        </section>
+        
+        <section>
+          <h3>获取组件</h3>
+          <app-view-child-panel #myPanel></app-view-child-panel>
+        </section>
+        
+        <section #box>
+          <h3>获取多个元素</h3>
+          <d-button (click)="showMidPanel = !showMidPanel">toggle mid</d-button>
+          <app-view-child-panel #firstPanel></app-view-child-panel>
+          <app-view-child-panel #midPanel *ngIf="showMidPanel"></app-view-child-panel>
+          <app-view-child-panel #lastPanel></app-view-child-panel>
+        </section>
+
+      </div>
+    </da-col-item>
+  </da-layout-row>
+</div>

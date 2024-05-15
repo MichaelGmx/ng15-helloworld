@@ -1,0 +1,40 @@
+<div class="da-content-banner">
+  <d-breadcrumb>
+    <d-breadcrumb-item>
+      <a routerLink="/">首页</a>
+    </d-breadcrumb-item>
+    <d-breadcrumb-item>Angular</d-breadcrumb-item>
+    <d-breadcrumb-item>@angular/core</d-breadcrumb-item>
+    <d-breadcrumb-item>Renderer2</d-breadcrumb-item>
+  </d-breadcrumb>
+  <div class="da-content-banner-title">
+    Renderer2
+  </div>
+  <div class="summary-markdown">
+    <markdown ngPreserveWhitespaces>
+      ## Renderer2的应用示例
+  
+      renderer2 自定义渲染DOM，可以创建元素、添加/删除样式、添加/删除属性、添加/删除Class等操作<br>
+  
+      下面的拖拽效果，是使用@HostListener获取鼠标事件后，<br>
+      用renderer2修改元素样式position位置实现的
+      
+      [官方 API](https://angular.cn/api/core/Renderer2)
+  
+      实现 拖拽效果 更方便方式是：使用 meterial-cdk 工具 <a [routerLink]="['/cdk/drag-drop-basic']">cdk Drag</a>
+    </markdown>
+  </div>
+</div>
+<div class="da-content-wrapper">
+  <da-layout-row [daGutter]="[24, 24]">
+    <da-col-item [daSpan]="24" [daXs]="24">
+      <div class="da-content-card">
+
+        <div appDrag class="test-box">
+          Drag It
+        </div>
+
+      </div>
+    </da-col-item>
+  </da-layout-row>
+</div>

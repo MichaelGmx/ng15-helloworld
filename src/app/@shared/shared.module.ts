@@ -23,6 +23,8 @@ import {
   RadioModule,
   BreadcrumbModule,
   ModalModule,
+  LoadingModule,
+  IconModule,
 } from 'ng-devui';
 import { I18nModule } from 'ng-devui/i18n';
 import { TranslateModule } from '@ngx-translate/core';
@@ -55,7 +57,9 @@ const DEVUI_MODULES = [
   DrawerModule,
   BreadcrumbModule,
   RadioModule,
-  ModalModule
+  ModalModule,
+  LoadingModule,
+  IconModule,
 ];
 const COMPONENTS = [
   HeaderComponent,

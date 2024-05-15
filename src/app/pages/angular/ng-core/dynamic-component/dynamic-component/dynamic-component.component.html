@@ -1,0 +1,37 @@
+<div class="da-content-banner">
+  <d-breadcrumb>
+    <d-breadcrumb-item>
+      <a routerLink="/">首页</a>
+    </d-breadcrumb-item>
+    <d-breadcrumb-item>Angular</d-breadcrumb-item>
+    <d-breadcrumb-item>@angular/core</d-breadcrumb-item>
+    <d-breadcrumb-item>动态组件</d-breadcrumb-item>
+  </d-breadcrumb>
+  <div class="da-content-banner-title">
+    动态组件 示例
+  </div>
+  <div class="summary-markdown">
+    <markdown ngPreserveWhitespaces>
+      ## 动态组件
+  
+      动态组件不同于常规标签调用的方式（此示例中 <code>&lt;</code>app-ux-alert<code>&gt;</code>）<br>
+      > 1.使用 ComponentFactoryResolver 创建组件实例<br>
+      > 2.并使用 ApplicationRef 加入到变更检测树中，获得变更检测<br>
+      > 3.最后加入到DOM树上<br>
+      > 4.添加至DOM树后，还可以为组件output事件添加订阅<br>
+
+      注：**ComponentFactoryResolver** v13版本正在被弃用
+    </markdown>
+  </div>
+</div>
+<div class="da-content-wrapper">
+  <da-layout-row [daGutter]="[24, 24]">
+    <da-col-item [daSpan]="24" [daXs]="24">
+      <div class="da-content-card">
+
+        <d-button (click)="showAlert()">Show Custom Alert</d-button>
+
+      </div>
+    </da-col-item>
+  </da-layout-row>
+</div>

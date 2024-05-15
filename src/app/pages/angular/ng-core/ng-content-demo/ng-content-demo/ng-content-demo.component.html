@@ -1,0 +1,58 @@
+<div class="da-content-banner">
+  <d-breadcrumb>
+    <d-breadcrumb-item>
+      <a routerLink="/">首页</a>
+    </d-breadcrumb-item>
+    <d-breadcrumb-item>Angular</d-breadcrumb-item>
+    <d-breadcrumb-item>@angular/core</d-breadcrumb-item>
+    <d-breadcrumb-item>内容投影 ng-content</d-breadcrumb-item>
+  </d-breadcrumb>
+  <div class="da-content-banner-title">
+    内容投影 ng-content 示例
+  </div>
+  <div class="summary-markdown">
+    <markdown ngPreserveWhitespaces>
+      ## 内容投影 ng-content
+  
+      [官方 tutorial](https://angular.cn/guide/content-projection)
+    </markdown>    
+  </div>
+</div>
+<div class="da-content-wrapper">
+  <da-layout-row [daGutter]="[24, 24]">
+    <da-col-item [daSpan]="24" [daXs]="24">
+      <div class="da-content-card">
+
+        <section>
+          <h3 class="title">单个插槽：</h3>
+          <app-zippy-basic>
+            <p>这是 插槽内容</p>
+          </app-zippy-basic>
+        </section>
+        
+        <section>
+          <h3 class="title">多个插槽：</h3>
+          <app-zippy-multislot>
+            <header>这是 Header</header>
+            <span>这是 内容</span>
+            <span id="footer">这是 Footer</span>
+            <span class="more">更多内容 - </span>
+            <span attr1>属性选择</span>
+          </app-zippy-multislot>
+        </section>
+        
+        <section>
+          <h3 class="title">有条件的内容投影：</h3>
+          <app-conditional-content-demo>
+            <d-button appZippyToggleBtn>Toggle</d-button>
+        
+            <ng-template appZippyContent>
+              需要展示的内容
+            </ng-template>
+          </app-conditional-content-demo>
+        </section>        
+
+      </div>
+    </da-col-item>
+  </da-layout-row>
+</div>

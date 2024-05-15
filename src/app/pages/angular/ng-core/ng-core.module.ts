@@ -4,10 +4,17 @@ import { SharedModule } from 'src/app/@shared/shared.module';
 import { NgCoreRoutingModule } from './ng-core-routing.module';
 
 import { NgCoreComponent } from './ng-core.component';
-import { InjectDemoComponent } from './inject-demo/inject-demo.component';
+import { NgZoneDemoComponent } from './ng-zone-demo/ng-zone-demo.component';
+import { ChangeDetectorComponent } from './change-detector/change-detector.component';
+import { ViewContainerComponent } from './view-container/view-container.component';
 
 @NgModule({
-  declarations: [NgCoreComponent, InjectDemoComponent],
+  declarations: [
+    NgCoreComponent,
+    NgZoneDemoComponent,
+    ChangeDetectorComponent,
+    ViewContainerComponent,
+  ],
   imports: [SharedModule, NgCoreRoutingModule],
   providers: [],
 })
