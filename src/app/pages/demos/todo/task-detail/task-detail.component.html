@@ -1,0 +1,32 @@
+<form dForm [layout]="layoutDirection" [formGroup]="editForm" class='detail-form'>
+  <d-form-item>
+    <d-form-label>任务名称</d-form-label>
+    <d-form-control>
+      <input dTextInput formControlName="name" type="text" placeholder="请输入任务名称" />
+      <!-- nzErrorTip="请输入任务名称" -->
+    </d-form-control>
+  </d-form-item>
+  <d-form-item>
+    <d-form-label>任务描述</d-form-label>
+    <d-form-control>
+      <input dTextInput formControlName="description" type="text" placeholder="请输入描述信息，可选填" />
+    </d-form-control>
+  </d-form-item>
+  <d-form-item>
+    <d-form-label>目标时间</d-form-label>
+    <d-form-control>
+      <input style="display: block;"
+        formControlName="deadline"
+        dDatepicker
+        #datePicker1="datepicker"
+        (click)="datePicker1.toggle()"
+        placeholder="请选择目标完成时间"
+      />
+    </d-form-control>
+  </d-form-item>
+</form>
+
+<div class="buttons-group">
+  <d-button bsStyle="danger" (click)="editTaskData()">修改任务</d-button>
+  <d-button bsStyle="common" (click)="cancelEdit()">取消修改</d-button>
+</div>

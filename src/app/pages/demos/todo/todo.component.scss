@@ -1,0 +1,57 @@
+:host {
+  --white: #fff;
+  --white-hover: #eee;
+  --orange-base: #fa8c16;
+  --orange-shade: #ec7f0a;
+  --text-color: #444;
+  --border-color-base: #ddd;
+}
+
+.date-container {
+  padding: 1rem;
+
+  .today {
+    font-size: 24px;
+  }
+
+  .today-time {
+    position: relative;
+    left: 10px;
+    color: var(--text-color);
+    opacity: 0.8;
+  }
+
+  .add-task {
+    margin-top: 12px;
+
+    .add-task-btn {
+      cursor: pointer;
+
+      &:hover {
+        color: var(--orange-base);
+      }
+
+      d-icon {
+        padding-right: 10px;
+      }
+    }
+  }
+
+  .extra-actions {
+    d-button {
+      margin-right: .5rem;
+    }
+  }
+}
+
+d-card {
+  margin: 1rem;
+}
+
+[nz-icon] {
+  cursor: pointer;
+}
+
+nz-divider {
+  opacity: 0.75;
+}

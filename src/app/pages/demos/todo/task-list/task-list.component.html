@@ -1,0 +1,27 @@
+<d-data-table [dataSource]="lstOfTodoTasks" [scrollable]="true" [tableWidthConfig]="tableWidthConfig" [tableOverflowType]="'overlay'">
+  <thead dTableHead>
+    <tr dTableRow>
+      <th dHeadCell *ngFor="let colOption of dataTableOptions.columns">{{ colOption.header }}</th>
+    </tr>
+  </thead>
+  <tbody dTableBody>
+    <ng-template let-rowItem="rowItem" let-rowIndex="rowIndex">
+      <tr dTableRow>
+        <!-- <td dTableCell *ngFor="let colOption of dataTableOptions.columns">
+          {{ rowItem[colOption.field] }}
+        </td> -->
+        <td dTableCell>
+          <d-checkbox (change)="checkTask(rowItem)"></d-checkbox>
+        </td>
+        <td dTableCell>
+          {{ rowItem['name'] }}
+        </td>
+        <td dTableCell>
+          <d-button (click)="showEditTask(rowItem)" icon="icon-edit" bsStyle="common" title="edit" shape="circle"></d-button>
+          <span style="display: inline-block; width: 8px;"></span>
+          <d-button (click)="deleteTask(rowItem)" icon="icon-delete" bsStyle="common" title="delete" shape="circle"></d-button>
+        </td>
+      </tr>
+    </ng-template>
+  </tbody>
+</d-data-table>

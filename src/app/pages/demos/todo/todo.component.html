@@ -1,0 +1,69 @@
+<div class="date-container">
+  <span class="today">今天</span>
+  <span class="today-time">
+    {{ today | date: 'EE MMMM d日' }}
+  </span>
+  <div class="form-container">
+    <div *ngIf="!showAddForm" class="add-task">
+      <d-button icon="icon-add" bsStyle="common" (click)="showTaskForm(true)">
+        新增任务
+      </d-button>
+    </div>
+    <div *ngIf="showAddForm" class="add-form">
+      <!-- <form nz-form [formGroup]="createForm">
+        <nz-form-item>
+          <nz-form-control nzErrorTip="请输入任务">
+            <nz-input-group nzCompact>
+              <input type="text" nz-input formControlName="name" placeholder="例如：今天八点前更新XXX" class="form-name">
+              <nz-date-picker
+                formControlName="deadline"
+                nzFormat="MMMMd日 HH:mm"
+                [nzShowTime]="{ nzFormat: 'HH:mm'}"
+                [nzDisabledDate]="disabledDate"
+              >
+              </nz-date-picker>
+            </nz-input-group>
+          </nz-form-control>
+        </nz-form-item>
+      </form> -->
+      <form dForm [layout]="layoutDirection" [formGroup]="createForm">
+        <d-form-item>
+          <d-form-label>任务名称</d-form-label>
+          <d-form-control>
+            <input dTextInput formControlName="name" type="text" placeholder="例如：今天八点前更新XXX" />
+          </d-form-control>
+        </d-form-item>
+        <d-form-item>
+          <d-form-label>目标时间</d-form-label>
+          <d-form-control>
+            <input style="display: block;"
+              formControlName="deadline"
+              dDatepicker
+              #datePicker1="datepicker"
+              (click)="datePicker1.toggle()"
+              placeholder="请选择目标完成时间"
+            />
+          </d-form-control>
+        </d-form-item>
+      </form>
+      <div class="extra-actions">
+        <d-button (click)="addTask()">新增任务</d-button>
+        <d-button bsStyle="common" (click)="showTaskForm(false)">取消</d-button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<d-card>
+  <d-card-header>
+    <d-card-title>
+      <d-icon icon="icon-calendar"></d-icon>
+      待办任务
+    </d-card-title>
+  </d-card-header>
+  <d-card-content>
+    <app-task-list
+      [(ngModel)]="lstOfTodoTasks"
+    ></app-task-list>
+  </d-card-content>
+</d-card>

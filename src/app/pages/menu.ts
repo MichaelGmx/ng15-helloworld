@@ -270,5 +270,20 @@ export default function (values: any) {
         },
       ],
     },
+    {
+      title: 'Demo',
+      menuIcon: 'icon icon-code',
+      link: '/demo',
+      children: [
+        {
+          title: 'todo',
+          link: '/demo/todo',
+        },
+        {
+          title: 'Rating Star',
+          link: '/demo/rating-star',
+        },
+      ],
+    },
   ];
 }

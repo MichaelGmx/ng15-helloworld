@@ -1,0 +1,49 @@
+<div class="da-content-banner">
+  <d-breadcrumb>
+    <d-breadcrumb-item>
+      <a routerLink="/">首页</a>
+    </d-breadcrumb-item>
+    <d-breadcrumb-item>Demo</d-breadcrumb-item>
+    <d-breadcrumb-item>Rating Star</d-breadcrumb-item>
+  </d-breadcrumb>
+  <div class="da-content-banner-title">
+    Rating Star
+  </div>
+  <!-- <div class="summary-markdown">
+    <markdown ngPreserveWhitespaces>
+      ## Rating Star
+    </markdown>
+  </div> -->
+</div>
+<div class="da-content-wrapper">
+  <da-layout-row [daGutter]="[24, 24]">
+    <da-col-item [daSpan]="24" [daXs]="24">
+      <div class="da-content-card">
+        
+        <div class="reference">
+          <p>参考：</p>
+          <a target="_blank" href="https://zhuanlan.zhihu.com/p/97561640">参考文章</a>
+          <a target="_blank" href="https://dev.to/bitovi/understanding-angular-s-control-value-accessor-interface-5e7k">参考文章[原文：英]</a>
+          <a target="_blank" href="https://github.com/tehfedaykin/galaxy-rating-app">源码</a>
+        </div>
+
+        <form [formGroup]="galaxyForm" (ngSubmit)="onSubmit()">
+          <div class="form-group">
+            <label>
+              Rating:
+              <app-star-rater formControlName="rating"></app-star-rater>
+            </label>
+          </div>
+          <div class="form-group">
+            <d-button type="submit">Submit</d-button>
+          </div>
+        </form>
+
+        <div *ngIf="formResult">
+          结果：{{ formResult | json }}
+        </div>
+        
+      </div>
+    </da-col-item>
+  </da-layout-row>
+</div>

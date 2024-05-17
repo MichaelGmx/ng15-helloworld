@@ -14,6 +14,7 @@ const routes: Routes = [
       { path: 'material', loadChildren: () => import('./material/material.module').then((m) => m.MaterialModule) },
       { path: 'google-map', loadChildren: () => import('./google-map/google-map.module').then((m) => m.GoogleMapModule) },
       { path: 'rxjs', loadChildren: () => import('./rxjs/rxjs.module').then((m) => m.RxjsModule) },
+      { path: 'demo', loadChildren: () => import('./demos/demos.module').then((m) => m.DemosModule) },
 
       { path: '', redirectTo: 'angular', pathMatch: 'full' },
       { path: '**', redirectTo: 'angular' },
