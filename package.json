@@ -7,7 +7,7 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "deploy": "ng build --prod --base-href=/ng15-helloworld/ --name='MichaelGmx' --email='474542562@qq.com'"
+    "deploy": "ng build --base-href=/ng15-helloworld/ --configuration production"
   },
   "private": true,
   "dependencies": {
