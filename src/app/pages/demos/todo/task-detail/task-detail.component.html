@@ -15,13 +15,19 @@
   <d-form-item>
     <d-form-label>目标时间</d-form-label>
     <d-form-control>
-      <input style="display: block;"
-        formControlName="deadline"
-        dDatepicker
-        #datePicker1="datepicker"
-        (click)="datePicker1.toggle()"
-        placeholder="请选择目标完成时间"
-      />
+      <div class="devui-input-group devui-dropdown-origin" dActiveFormControl>
+        <input dTextInput
+          formControlName="deadline"
+          dDatepicker
+          #datePicker1="datepicker"
+          (click)="datePicker1.toggle()"
+          dateFormat="yyyy-MM-dd"
+          placeholder="请选择目标完成时间"
+        />
+        <div class="devui-input-group-addon" (click)="datePicker1.toggle()">
+          <i class="icon icon-calendar"></i>
+        </div>
+      </div>
     </d-form-control>
   </d-form-item>
 </form>

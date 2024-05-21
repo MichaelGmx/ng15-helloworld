@@ -1,5 +1,5 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-control-value-accessor',
@@ -15,8 +15,14 @@ export class ControlValueAccessorComponent {
   constructor(
     private formBuilder: FormBuilder
   ) {
-    this.helloForm = this.formBuilder.group({
-      counter: 5
+    // 方式1：
+    // this.helloForm = this.formBuilder.group({
+    //   counter: 5
+    // });
+
+    // 方式2：
+    this.helloForm = new FormGroup({
+      counter: new FormControl(5),
     });
   }
 
